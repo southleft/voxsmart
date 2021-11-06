@@ -22,6 +22,6 @@
   "scripts": {
     "dev": "gulp",
     "fractal:start": "fractal start --sync",
-    "fractal:build": "fractal build; gulp build-theme;"
+    "fractal:build": "fractal build"
   }
 }

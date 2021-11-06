@@ -1,0 +1,28 @@
+{
+  "name": "voxsmart",
+  "version": "1.0.0",
+  "description": "Component UI for VoxSmart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southleft/voxsmart.git"
+  },
+  "keywords": [
+    "component",
+    "ui",
+    "pattern",
+    "library"
+  ],
+  "author": "Cake & Arrow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/southleft/voxsmart/issues"
+  },
+  "homepage": "https://github.com/southleft/voxsmart#readme",
+  "dependencies": {
+    "@frctl/fractal": "^1.5.11"
+  }
+}

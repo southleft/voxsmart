@@ -29,15 +29,22 @@ e.g.
 
 ```json
 "scripts": {
-    "fractal:start": "fractal start --sync",
-    "fractal:build": "fractal build"
+  "dev": "gulp",
+  "fractal:start": "fractal start --sync",
+  "fractal:build": "fractal build"
 }
 ```
 
-then
+then, in one shell to start up Fractal
 
 ```shell
 npm run fractal:start
+```
+
+and in another shell to compile .js and .scss files
+
+```shell
+npm run dev
 ```
 
 ### Installing globally

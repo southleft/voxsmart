@@ -1,1 +1,27 @@
-{"name":"voxsmart-component-library","version":"0.1.0","dependencies":{"@frctl/fractal":"^1.5.11","@frctl/mandelbrot":"^1.9.4","@frctl/twig":"^1.2.11"},"scripts":{"fractal:start":"fractal start --sync","fractal:build":"fractal build"}}
+{
+  "name": "voxsmart-component-library",
+  "version": "0.1.0",
+  "dependencies": {
+    "@frctl/fractal": "^1.5.11",
+    "@frctl/mandelbrot": "^1.9.4",
+    "@frctl/twig": "^1.2.11"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp4-run-sequence": "^1.0.0",
+    "sass": "^1.43.4"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "fractal:start": "fractal start --sync",
+    "fractal:build": "fractal build; gulp build-theme;"
+  }
+}

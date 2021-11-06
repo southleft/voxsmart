@@ -12,7 +12,6 @@ This component library utilizes the following dependecies.
 
 - [Node.js](https://nodejs.org/en/)
 - [Fractal](https://fractal.build/)
-- [Yarn](https://yarnpkg.com/)
 
 ## Getting started
 

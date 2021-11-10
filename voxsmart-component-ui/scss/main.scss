@@ -36,12 +36,17 @@ a {
   background-color: #0F1016;
   color: #fff;
   transition: all 0.15s ease-in-out;
+  box-shadow: 0px 5px 10px rgba(15, 16, 22, 0.15);
 
   &:hover {
-    background-color: #FF0000;
+    background-color: #313340;
   }
 
   &--secondary {
-    background-color: #2c8ef8;
+    background-color: #585A66;
+
+    &:hover {
+      background-color: #82828F;
+    }
   }
 }

@@ -1,0 +1,8 @@
+{% if checkbox %}
+  {% set base_class = checkbox.base_class|default('o-form-item') %}
+
+  <div class="{{ base_class }}" {{ checkbox.attributes }}>
+    <input id="checkbox-{{ checkbox.id }}" name="{{ checkbox.id }}" type="checkbox"{% if checkbox.checked %} checked="checked"{% endif %} {{ checkbox.input.attributes }}>
+    <label for="checkbox-{{ checkbox.id }}" aria-label="{{ checkbox.text }}">{{ checkbox.text }}</label>
+  </div>
+{% endif %}

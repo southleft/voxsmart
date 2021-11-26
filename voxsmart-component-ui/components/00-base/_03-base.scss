@@ -1,0 +1,79 @@
+/* ------------------------------------ *\
+    $RESET
+\* ------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+  font-size: $font-size-body;
+  font-weight: 300;
+  background: linear-gradient(to bottom, white 0%, #f1fbfb 100%);
+  color: $c-body;
+  min-height: 100vh;
+}
+
+blockquote,
+body,
+div,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+iframe,
+label,
+legend,
+li,
+nav,
+object,
+ol,
+p,
+section,
+table,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+address {
+  font-style: normal;
+}
+
+img,
+video,
+object,
+svg,
+iframe {
+  max-width: 100%;
+  border: none;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  transition: $transition-all;
+  color: inherit;
+}

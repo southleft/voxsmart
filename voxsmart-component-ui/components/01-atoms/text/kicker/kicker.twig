@@ -1,0 +1,13 @@
+{% if kicker.text %}
+  {% set base_class = kicker.base_class|default('o-kicker') %}
+
+  <span class="{{ base_class }}">
+    {% if kicker.link %}
+      <a class="{{ base_class.link }}" href="{{ kicker.link }}">
+        {{ kicker.text }}
+      </a>
+    {% else %}
+      {{ kicker.text }}
+    {% endif %}
+  </span>
+{% endif %}

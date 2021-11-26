@@ -1,0 +1,7 @@
+{% if dek.text %}
+  {% set base_class = dek.base_class|default('o-dek') %}
+
+  <div class="{{ base_class }}">
+    {{ dek.text }}
+  </div>
+{% endif %}

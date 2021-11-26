@@ -1,0 +1,16 @@
+{% if figure %}
+  {% set base_class = figure.base_class|default('o-figure') %}
+
+  <figure class="{{ base_class }}" {{ figure.attributes }}>
+    {% if figure.link.url %}
+      <a class="{{ base_class.link }}" href="{{ figure.link.url }}" {{ figure.link.attributes }}>
+    {% endif %}
+      {% include "@atoms/images/image/responsive-image.twig" with figure %}
+    {% if figure.link.url %}
+      </a>
+    {% endif %}
+    {% if figure.image.caption %}
+      <figcaption class="{{ base_class.caption }} o-small u-space--half--top">{{ figure.image.caption }}</figcaption>
+    {% endif %}
+  </figure>
+{% endif %}

@@ -1,0 +1,7 @@
+{% if small.text %}
+  {% set base_class = small.base_class|default('o-small') %}
+
+  <small class="{{ base_class }}">
+    {{ small.text }}
+  </small>
+{% endif %}

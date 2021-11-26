@@ -1,0 +1,7 @@
+{% if caption %}
+  {% set base_class = caption.base_class|default('o-caption') %}
+
+  <span class="{{ base_class }}" >
+    {{ caption.text }}
+  </span>
+{% endif %}

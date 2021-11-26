@@ -1,0 +1,7 @@
+{% if rich_text.text %}
+  {% set base_class = rich_text.base_class|default('o-rich-text') %}
+
+  <div class="{{ (base_class }}" {{ rich_text.attributes }}>
+    {{ rich_text.text }}
+  </div>
+{% endif %}

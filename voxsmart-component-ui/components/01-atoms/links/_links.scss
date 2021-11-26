@@ -1,0 +1,34 @@
+@mixin o-link($color: $c-blue, $color-hover: $c-blue--light) {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: $transition-all;
+  text-decoration: none;
+  color: $color;
+  @include body-copy;
+
+  &:hover,
+  &:focus {
+    color: $color-hover;
+    box-shadow: inset 0 -3px 0 -2px $color-hover;
+  }
+
+  span + span {
+    margin-left: $space-half;
+  }
+}
+
+.o-link {
+  @include o-link;
+
+  &--simple {
+    font-weight: 300;
+
+    &:hover,
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}

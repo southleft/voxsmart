@@ -1,0 +1,65 @@
+.o-rich-text {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: auto;
+
+  & > * + * {
+    margin-top: $space;
+  }
+
+  > *:not(section) {
+    max-width: $max-width-s;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > section {
+    margin-top: $space-double;
+  }
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    padding-top: $space;
+    margin-bottom: calc(#{$space-half} * -1);
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  h2:empty,
+  h3:empty,
+  p:empty {
+    display: none;
+  }
+
+  > p a,
+  > a {
+    @include o-link;
+    display: unset;
+  }
+
+  > hr {
+    margin: $space-double auto;
+  }
+
+  > ul {
+    margin-left: $space-double;
+  }
+
+  .wp-block-image {
+    margin-bottom: 0;
+  }
+
+  .wp-block-separator {
+    height: 1px;
+    width: 80px;
+    background-color: $c-border;
+    border: 0;
+  }
+}

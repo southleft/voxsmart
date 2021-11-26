@@ -1,0 +1,10 @@
+{% if textarea %}
+  {% set base_class = textarea.base_class|default('o-form-item') %}
+
+  <div class="{{ base_class }}">
+    {% if textarea.label %}
+      <label class="{{ base_class.label }}" for="{{ textarea.id }}">{{ textarea.label }}</label>
+    {% endif %}
+    <textarea id="{{ textarea.id }}" class="{{ base_class.textarea }}"></textarea>
+  </div>
+{% endif %}

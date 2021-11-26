@@ -1,0 +1,121 @@
+/*
+ * Generic header styles:
+ * All arguments are optional. If not defined, the defaults below will be used
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $c-primary;
+}
+
+@mixin o-heading-link($color-link: $c-primary, $color-link-hover: $c-secondary) {
+  a {
+    color: $color-link;
+
+    &:hover,
+    &:focus {
+      color: $color-link-hover;
+    }
+  }
+}
+
+/*
+ * Primary Headings
+*/
+
+@mixin o-heading--xxl {
+  font-family: $font-primary;
+  font-size: $font-size-h1;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1;
+
+  @include o-heading-link;
+}
+
+.o-heading--xxl,
+h1 {
+  @include o-heading--xxl;
+}
+
+@mixin o-heading--xl {
+  font-family: $font-primary;
+  font-size: $font-size-h2;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1;
+
+  @include o-heading-link;
+}
+
+.o-heading--xl,
+h2 {
+  @include o-heading--xl;
+}
+
+@mixin o-heading--l {
+  font-family: $font-primary;
+  font-size: $font-size-h3;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.1;
+
+  @include o-heading-link;
+}
+
+.o-heading--l,
+h3 {
+  @include o-heading--l;
+}
+
+@mixin o-heading--m {
+  font-family: $font-primary;
+  font-size: $font-size-h4;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.16;
+
+  @include o-heading-link;
+}
+
+.o-heading--m,
+h4 {
+  @include o-heading--m;
+}
+
+@mixin o-heading--s {
+  font-family: $font-primary;
+  font-size: $font-size-h5;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.35;
+
+  @include o-heading-link;
+}
+
+.o-heading--s,
+h5 {
+  @include o-heading--s;
+}
+
+@mixin o-heading--xs {
+  font-family: $font-primary;
+  font-size: $font-size-h6;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  @include o-heading-link;
+}
+
+.o-heading--xs,
+h6 {
+  @include o-heading--xs;
+}

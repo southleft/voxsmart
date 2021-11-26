@@ -1,0 +1,13 @@
+{% if heading.level and heading.text %}
+  {% set base_class = heading.base_class|default('o-heading') %}
+
+  <h{{ heading.level }} class="{{ heading.type and heading.size ? heading_base_class ~ ' ' : '' }}{{ base_class }}">
+    {% if heading.link %}
+      <a class="{{ base_class.link }}" href="{{ heading.link.url }}" {{ heading.link.attributes }}>
+        {{ heading.text }}
+      </a>
+    {% else %}
+      {{ heading.text }}
+    {% endif %}
+  </h{{ heading.level }}>
+{% endif %}

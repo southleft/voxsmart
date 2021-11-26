@@ -2,8 +2,10 @@
   "title": "Buttons",
 	"default": "primary",
   "context": {
-    "text": "Package &amp; Download",
-    "url": "https://google.com"
+		"button": {
+			"text": "Package &amp; Download",
+			"url": "https://google.com"
+		}
   },
 	"variants": [
 		{
@@ -14,7 +16,9 @@
 			"name": "secondary",
 			"label": "Secondary",
       "context": {
-        "text": "Dismiss Alert"
+				"button": {
+        	"text": "Dismiss Alert"
+				}
       }
 		}
 	]

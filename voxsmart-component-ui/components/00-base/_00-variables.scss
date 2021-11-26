@@ -1,0 +1,220 @@
+/*
+ * General Variables
+ * Note: colors should go into
+ * components/00-base/01-colors/_color-vars.css
+ * and breakpoint related vars into
+ * components/00-base/base/_breakpoints.css
+*/
+
+$tests: true;
+
+/*
+ * Colors
+*/
+
+// Brand Colors
+$c-teal--light: #77dbdb;
+$c-teal: #63bcbc;
+$c-blue: #48aaed;
+$c-blue--light: #90cef8;
+$c-navy--light: #dbe2ea;
+$c-navy: #52647d;
+$c-navy--dark: #124168;
+$c-green: #5f7772;
+$c-red: #9e5f5f;
+$c-pink: #fcb3b1;
+
+$c-black: #201c1d;
+$c-white: #fff;
+$c-gray: #525252;
+$c-gray--light: #f7fbf9;
+
+$c-primary: $c-navy--dark;
+$c-secondary: $c-blue;
+$c-tertiary: $c-red;
+
+// Border/Overlay Colors
+$c-border: $c-navy--light;
+$c-overlay: rgba(0, 0, 0, 0.5);
+$c-gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(139.01deg, $c-blue 10.06%, $c-teal 90.66%);
+$c-body: $c-navy;
+
+// Default Colors
+$c-error--light: #f99;
+$c-error: #cb4324;
+$c-error--dark: #bf2600;
+$c-error--darker: #841a00;
+
+$c-valid--lighter: #fafdfc;
+$c-valid--light: #ecf3ee;
+$c-valid: #36b370;
+$c-valid--dark: #008842;
+$c-valid--darker: #1a6343;
+
+$c-warning--lighter: #fffef9;
+$c-warning--light: #fffae6;
+$c-warning: #ffab00;
+$c-warning--dark: #b26100;
+$c-warning--darker: #774100;
+
+$c-information--lighter: #fffef9;
+$c-information--light: #e6fcff;
+$c-information: #00b8d9;
+$c-information--dark: #008da6;
+$c-information--darker: #005b6b;
+
+/*
+ * Fonts
+*/
+@import url("https://use.typekit.net/mkt3rod.css");
+
+$font-body: laca, sans-serif;
+$font-primary: laca, sans-serif;
+
+/**
+ * Common breakpoints.
+ */
+$xsmall: 320px;
+$small: 500px;
+$medium: 768px;
+$large: 960px;
+$xlarge: 1080px;
+$xxlarge: 1260px;
+
+$breakpoints: ("xsmall": $xsmall, "small": $small, "medium": $medium, "large": $large, "xlarge": $xlarge, "xxlarge": $xxlarge);
+
+/**
+ * Max width.
+ */
+$max-width: $xlarge;
+$max-width-s: 650px;
+$max-width-m: 880px;
+$max-width-l: $large;
+$max-width-xl: $xlarge;
+$max-width-xxl: $xxlarge;
+
+/**
+ * Icons.
+ */
+$icon-xsmall: 16px;
+$icon-small: 20px;
+$icon-medium: 30px;
+$icon-large: 35px;
+$icon-xlarge: 45px;
+$icon-xxlarge: 80px;
+
+/**
+ * Border/Shadow Styles.
+ */
+$border-radius--small: 5px;
+$border-radius: 10px;
+$border--standard: 1px solid $c-border;
+$box-shadow: 4px 7px 14px rgba(black, 0.1);
+$box-shadow--small: 4px 4px 14px rgba(0, 0, 0, 0.1);
+$box-shadow--card: 0px 0px 20px rgba(0, 0, 0, 0.08);
+
+/**
+ * Transitions.
+ */
+$transition-effect: cubic-bezier(0.86, 0, 0.07, 1);
+$transition-all: all 0.25s $transition-effect;
+
+/**
+ * Z Index.
+ */
+$z-index-vanish: -1;
+$z-index-none: 0;
+$z-index-1: 100;
+$z-index-2: 200;
+$z-index-5: 500;
+$z-index-10: 1000;
+$z-index-15: 1500;
+$z-index-30: 3000;
+$z-index-50: 5000;
+$z-index-75: 7500;
+$z-index-100: 10000;
+
+$z-index-mq-display: $z-index-100;
+$z-index-menu-toggle: $z-index-100;
+$z-index-back-to-top: $z-index-100;
+
+/**
+ * Native Custom Properties
+ */
+
+:root {
+  --font-size-body: 16px;
+  --font-size-xs: 12px;
+  --font-size-h6: 14px;
+  --font-size-h5: 18px;
+  --font-size-h4: 23px;
+  --font-size-h3: 28px;
+  --font-size-h2: 32px;
+  --font-size-h1: 42px;
+  --space: 20px;
+}
+
+// Medium Breakpoint
+@media screen and (min-width: $medium) {
+  :root {
+    --font-size-body: 18px;
+    --font-size-xs: 14px;
+    --font-size-h6: 16px;
+    --font-size-h5: 20px;
+    --font-size-h4: 28px;
+    --font-size-h3: 36px;
+    --font-size-h2: 44px;
+    --font-size-h1: 72px;
+    --space: 30px;
+  }
+}
+
+// Large Breakpoint
+@media screen and (min-width: $large) {
+  :root {
+    --font-size-h1: 72px;
+  }
+}
+
+/**
+ * Font Sizes.
+ */
+$font-size-body: var(--font-size-body, 16px);
+$font-size-xs: var(--font-size-xs, 12px);
+$font-size-h6: var(--font-size-h6, 14px);
+$font-size-h5: var(--font-size-h5, 18px);
+$font-size-h4: var(--font-size-h4, 23px);
+$font-size-h3: var(--font-size-h3, 28px);
+$font-size-h2: var(--font-size-h2, 32px);
+$font-size-h1: var(--font-size-h1, 42px);
+
+/**
+ * Grid.
+ */
+$grid-columns: 12;
+$gutter: var(--space, 20px);
+
+/**
+ * Spacing.
+ */
+$space: var(--space, 20px);
+
+/**
+ * Spacing - Times.
+ */
+$space-and-half: calc(#{$space} * 1.5);
+$space-double: calc(#{$space} * 2);
+$space-triple: calc(#{$space} * 3);
+$space-quadruple: calc(#{$space} * 4);
+
+/**
+ * Spacing - Divided.
+ */
+$space-half: calc(#{$space} / 2);
+$space-quarter: calc(#{$space} / 4);
+
+/*
+ * Theme variables.
+ */
+$sidebar-width: 300px;
+$main-width: calc(100% - (#{$sidebar-width}));

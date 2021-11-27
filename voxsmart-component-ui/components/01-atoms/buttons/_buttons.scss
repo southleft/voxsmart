@@ -2,7 +2,7 @@
     $BUTTONS
 \* ------------------------------------ */
 
-@mixin o-button($bg-color: $c-secondary, $color: $c-white, $border-color: $c-secondary, $bg-color-hover: $c-teal, $color-hover: $c-white, $border-color-hover: $c-teal) {
+@mixin o-button($bg-color: $button-background-color--primary, $color: $button-color--primary, $bg-color-hover: $button-background-hover-color--primary, $color-hover: $button-hover-color--primary) {
   cursor: pointer;
   outline: none;
   display: inline-flex;
@@ -12,45 +12,44 @@
   text-align: center;
   background-color: $bg-color;
   color: $color;
-  padding: $space-half $space-and-half;
+  padding: 8px $space;
   transition: $transition-all;
-  border-radius: 50px;
-  border: 1px solid $border-color;
-  box-shadow: $box-shadow--small;
-  @include o-heading--s;
+  font-size: $font-size-body;
   font-weight: 500;
+  line-height: 24px;
 
   &:focus,
   &:hover {
     color: $color-hover;
     background-color: $bg-color-hover;
-    border-color: $border-color-hover;
+  }
+
+  &:disabled,
+  &[disabled] {
+    color: $button-disabled-color;
+    background-color: $button-background-disabled-color;
   }
 
   span + span {
     margin-left: $space-half;
   }
 
-  svg path {
-    fill: currentColor;
+  svg {
+    width: 20px;
+    height: 20px;
+
+    * {
+      fill: $color;
+    }
   }
 }
 
 @mixin o-button--secondary {
-  @include o-button($c-white, $c-primary, $c-white, $c-primary, $c-white, $c-primary);
-}
-
-@mixin o-button--tertiary {
-  @include o-button(transparent, $c-white, $c-white, $c-primary, $c-white, $c-primary);
+  @include o-button($button-background-color--secondary, $button-color--secondary, $button-background-hover-color--secondary, $button-hover-color--secondary);
 }
 
 @mixin o-button--small {
   padding: $space-quarter $space !important;
-}
-
-@mixin o-button--circle {
-  width: 30px;
-  height: 30px;
 }
 
 .o-button {
@@ -60,15 +59,7 @@
     @include o-button--secondary;
   }
 
-  &--tertiary {
-    @include o-button--tertiary;
-  }
-
   &--small {
     @include o-button--small;
-  }
-
-  &--circle {
-    @include o-button--circle;
   }
 }

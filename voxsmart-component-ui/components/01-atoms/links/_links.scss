@@ -1,4 +1,4 @@
-@mixin o-link($color: $c-blue, $color-hover: $c-blue--light) {
+@mixin o-link($color: $link-color, $color-hover: $link-hover-color) {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -7,12 +7,12 @@
   transition: $transition-all;
   text-decoration: none;
   color: $color;
-  @include body-copy;
+  font-weight: 600;
 
   &:hover,
   &:focus {
-    color: $color-hover;
-    box-shadow: inset 0 -3px 0 -2px $color-hover;
+    text-decoration: underline;
+    text-underline-position: under;
   }
 
   span + span {
@@ -25,10 +25,5 @@
 
   &--simple {
     font-weight: 300;
-
-    &:hover,
-    &:focus {
-      box-shadow: none !important;
-    }
   }
 }

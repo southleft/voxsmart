@@ -9,15 +9,25 @@
   },
 	"variants": [
 		{
-			"name": "primary",
-			"label": "Primary"
-		},
-		{
 			"name": "secondary",
-			"label": "Secondary",
       "context": {
 				"button": {
-        	"text": "Dismiss Alert"
+        	"text": "Dismiss Alert",
+					"classes": "o-button--secondary"
+				}
+      }
+		},
+		{
+			"name": "With Right Icon",
+      "context": {
+				"button": {
+					"text": "View More",
+        	"icon_after": {
+						"icon": {
+							"title": "icon",
+							"name": "icon-arrow-right"
+						}
+					}
 				}
       }
 		}

@@ -4,14 +4,14 @@
   appearance: none;
   padding: $space-half;
   box-shadow: none;
-  border-radius: $border-radius;
+  border-radius: 0;
   border: $border--standard;
-  background-color: white;
+  background-color: $c-white;
   font-weight: 300;
-  color: $c-navy;
+  color: $c-body;
 
   &::placeholder {
-    color: $c-navy;
+    color: $c-light;
     font-weight: 300;
   }
 
@@ -23,8 +23,6 @@
 
 @mixin o-label {
   @include body-copy;
-
-  color: $c-navy;
   margin-bottom: $space-quarter;
 }
 
@@ -162,85 +160,6 @@ select {
     input[type="submit"] {
       width: 120px;
       margin-top: 0;
-    }
-  }
-}
-
-body .pp-form-container {
-  @include body-copy;
-  text-align: center;
-  max-width: 400px !important;
-  margin-left: auto;
-  margin-right: auto;
-
-  &#pp-login-1-wrap,
-  &#pp-password-reset-1-wrap {
-    #pp-login-1,
-    #pp-password-reset-1 {
-      &.ppBuildScratch {
-        background-color: transparent;
-
-        * {
-          @include body-copy;
-        }
-      }
-    }
-
-    > .profilepress-login-status {
-      background-color: $c-tertiary;
-      border-radius: $border-radius;
-    }
-  }
-
-  &#pp-login-1-wrap {
-    padding-top: $space-double;
-  }
-
-  form {
-    .pp-form-wrapper {
-      .ppbs-headline {
-        @include o-heading--l;
-        margin-bottom: $space;
-      }
-
-      input,
-      input[type="email"] {
-        @include o-input;
-        margin-bottom: $space;
-      }
-
-      label {
-        @include o-label;
-      }
-
-      input[type="submit"] {
-        @include o-button;
-        width: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 0;
-      }
-
-      i {
-        display: none;
-      }
-    }
-
-    .ppress-form-bottom-links {
-      padding: 0;
-      margin-top: $space;
-
-      a {
-        color: $c-blue;
-        font-size: $font-size-xs;
-
-        &:hover,
-        &:focus {
-          color: $c-teal;
-          text-decoration: none;
-        }
-      }
     }
   }
 }

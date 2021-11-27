@@ -1,10 +1,6 @@
-/*
- * General Variables
- * Note: colors should go into
- * components/00-base/01-colors/_color-vars.css
- * and breakpoint related vars into
- * components/00-base/base/_breakpoints.css
-*/
+/* ------------------------------------ *\
+    $GENERAL VARIABLES/DESIGN TOKENS
+\* ------------------------------------ */
 
 $tests: true;
 
@@ -13,31 +9,32 @@ $tests: true;
 */
 
 // Brand Colors
-$c-teal--light: #77dbdb;
-$c-teal: #63bcbc;
-$c-blue: #48aaed;
-$c-blue--light: #90cef8;
-$c-navy--light: #dbe2ea;
-$c-navy: #52647d;
-$c-navy--dark: #124168;
-$c-green: #5f7772;
-$c-red: #9e5f5f;
-$c-pink: #fcb3b1;
+$c-blue: #2C8EF8;
+$c-red: #E32D22;
+$c-green: #70DB98;
+$c-yellow: #FFC575;
 
-$c-black: #201c1d;
+// Neutrals
+$c-black: #000;
+$c-dark: #0F1016;
+$c-gray--85: #1E202D;
+$c-gray--75: #313340;
+$c-gray--60: #585A66;
+$c-gray--45: #82828F;
+$c-gray--30: #A5A8B4;
+$c-gray--15: #D3D3DB;
+$c-light: #F2F3F6;
 $c-white: #fff;
-$c-gray: #525252;
-$c-gray--light: #f7fbf9;
 
-$c-primary: $c-navy--dark;
+// Theme Colors
+$c-primary: $c-red;
 $c-secondary: $c-blue;
-$c-tertiary: $c-red;
+$c-tertiary: $c-green;
+$c-quaternary: $c-yellow;
 
-// Border/Overlay Colors
-$c-border: $c-navy--light;
-$c-overlay: rgba(0, 0, 0, 0.5);
-$c-gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(139.01deg, $c-blue 10.06%, $c-teal 90.66%);
-$c-body: $c-navy;
+// Body/Border Color
+$c-body: $c-dark;
+$c-border: $c-gray--15;
 
 // Default Colors
 $c-error--light: #f99;
@@ -66,10 +63,10 @@ $c-information--darker: #005b6b;
 /*
  * Fonts
 */
-@import url("https://use.typekit.net/mkt3rod.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-$font-body: laca, sans-serif;
-$font-primary: laca, sans-serif;
+$font-body: 'Inter', sans-serif;
+$font-primary: 'Inter', sans-serif;
 
 /**
  * Common breakpoints.
@@ -106,12 +103,34 @@ $icon-xxlarge: 80px;
 /**
  * Border/Shadow Styles.
  */
-$border-radius--small: 5px;
-$border-radius: 10px;
 $border--standard: 1px solid $c-border;
 $box-shadow: 4px 7px 14px rgba(black, 0.1);
 $box-shadow--small: 4px 4px 14px rgba(0, 0, 0, 0.1);
-$box-shadow--card: 0px 0px 20px rgba(0, 0, 0, 0.08);
+$box-shadow--action: 0px -5px 10px rgba(15, 16, 22, 0.1);
+
+/**
+ * Buttun/Link Styles.
+ */
+$button-disabled-color: $c-white;
+$button-background-disabled-color: $c-gray--30;
+
+// Primary
+$button-color--primary: $c-white;
+$button-background-color--primary: $c-dark;
+$button-hover-color--primary: $c-white;
+$button-background-hover-color--primary: $c-gray--75;
+
+// Secondary
+$button-color--secondary: $c-white;
+$button-background-color--secondary: $c-gray--60;
+$button-hover-color--secondary: $c-white;
+$button-background-hover-color--secondary: $c-gray--45;
+
+// Text Link
+$link-color: $c-gray--75;
+$link-hover-color: $c-dark;
+$link-active-color: $c-gray--60;
+$link-disabled-color: $c-gray--45;
 
 /**
  * Transitions.
@@ -143,28 +162,20 @@ $z-index-back-to-top: $z-index-100;
  */
 
 :root {
-  --font-size-body: 16px;
+  --font-size-body: 14px;
   --font-size-xs: 12px;
   --font-size-h6: 14px;
-  --font-size-h5: 18px;
-  --font-size-h4: 23px;
-  --font-size-h3: 28px;
-  --font-size-h2: 32px;
-  --font-size-h1: 42px;
+  --font-size-h5: 16px;
+  --font-size-h4: 20px;
+  --font-size-h3: 24px;
+  --font-size-h2: 30px;
+  --font-size-h1: 36px;
   --space: 20px;
 }
 
 // Medium Breakpoint
 @media screen and (min-width: $medium) {
   :root {
-    --font-size-body: 18px;
-    --font-size-xs: 14px;
-    --font-size-h6: 16px;
-    --font-size-h5: 20px;
-    --font-size-h4: 28px;
-    --font-size-h3: 36px;
-    --font-size-h2: 44px;
-    --font-size-h1: 72px;
     --space: 30px;
   }
 }
@@ -172,14 +183,14 @@ $z-index-back-to-top: $z-index-100;
 // Large Breakpoint
 @media screen and (min-width: $large) {
   :root {
-    --font-size-h1: 72px;
+    --font-size-h1: 42px;
   }
 }
 
 /**
  * Font Sizes.
  */
-$font-size-body: var(--font-size-body, 16px);
+$font-size-body: var(--font-size-body, 14px);
 $font-size-xs: var(--font-size-xs, 12px);
 $font-size-h6: var(--font-size-h6, 14px);
 $font-size-h5: var(--font-size-h5, 18px);
@@ -216,5 +227,3 @@ $space-quarter: calc(#{$space} / 4);
 /*
  * Theme variables.
  */
-$sidebar-width: 300px;
-$main-width: calc(100% - (#{$sidebar-width}));

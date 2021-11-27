@@ -1,0 +1,9 @@
+{
+  "handle": "icon",
+  "context": {
+		"icon": {
+			"title": "Icon",
+			"name": "icon-arrow--left"
+		}
+  }
+}

@@ -1,0 +1,5 @@
+{% if icon.name %}
+  <span class="o-icon {{ icon.classes }}" aria-label="{{ icon.title ? icon.title : icon.name|capitalize }}">
+    {% include "@" ~ icon.name %}
+  </span>
+{% endif %}

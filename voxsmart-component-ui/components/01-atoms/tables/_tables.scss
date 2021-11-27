@@ -1,7 +1,7 @@
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid $c-gray;
+  border: 1px solid $c-border;
   width: 100%;
 }
 
@@ -27,14 +27,14 @@ td {
  * Responsive Table
  */
 .c-table--responsive {
-  border: 1px solid $c-gray;
+  border: 1px solid $c-border;
   border-collapse: collapse;
   padding: 0;
   width: 100%;
 
   tr {
-    border: 1px solid $c-gray;
-    background-color: $c-gray;
+    border: 1px solid $c-border;
+    background-color: $c-border;
   }
 
   th,
@@ -44,7 +44,7 @@ td {
 
   th {
     text-transform: uppercase;
-    border-bottom: 1px solid $c-gray;
+    border-bottom: 1px solid $c-border;
   }
 
   @include media("<=medium") {
@@ -62,7 +62,7 @@ td {
     }
 
     tr {
-      border-bottom: 3px solid $c-gray;
+      border-bottom: 3px solid $c-border;
       display: block;
       margin-bottom: $space / 2;
 
@@ -78,7 +78,7 @@ td {
     }
 
     td {
-      border-bottom: 1px solid $c-gray;
+      border-bottom: 1px solid $c-border;
       display: flex;
       align-items: center;
       justify-content: space-between;

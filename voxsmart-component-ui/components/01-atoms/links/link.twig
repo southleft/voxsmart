@@ -1,20 +1,13 @@
-{% if link.url %}
-  {% set base_class = link.base_class|default('o-link') %}
-
-  <a class="{{ base_class }}" href="{{ link.url }}"{{ link.target == '_blank' ? ' target="_blank" rel="noreferrer"' : ' target="_self"' }} {{ link.attributes }}>
-    {% if link.icon %}
+{% if link.url or link.text %}
+  <a class="o-link {{ link.classes }}" href="{{ link.url }}"{{ link.target == '_blank' ? ' target="_blank" rel="noreferrer"' : ' target="_self"' }} {{ link.attributes }}>
+    {% if link.icon_before %}
       {% include "@atoms/images/icons/icon.twig" with link %}
     {% endif %}
     {% if link.text %}
       <span>{{ link.text|raw }}</span>
     {% endif %}
-    {% if link.arrow %}
-      {% include "@atoms/images/icons/icon.twig" with {
-        "icon": {
-          "name": "arrow",
-          "modifiers": "small"
-        }
-      } %}
+    {% if link.icon_after %}
+      {% include "@atoms/images/icons/icon.twig" with link %}
     {% endif %}
   </a>
 {% endif %}

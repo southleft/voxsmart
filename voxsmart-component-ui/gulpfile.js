@@ -7,7 +7,8 @@ var config = {};
 // SCSS
 config.sass = {
   srcFiles: [
-    './scss/*.scss'
+    './scss/*.scss',
+    './components/**/*.scss'
   ],
   options: {
     outputStyle: 'compressed'
@@ -18,9 +19,9 @@ config.sass = {
 // Javascript
 config.scripts = {
   srcFiles: [
-    './js/*.js'
+    './scripts/*.js'
   ],
-  destDir: './public/js'
+  destDir: './public/scripts/'
 };
 
 // Load Gulp and other tools.
@@ -43,8 +44,8 @@ var concat = require('gulp-concat');
  * Sets up and watchers.
  */
 gulp.task('watch', function () {
-  gulp.watch('scss/**/*.scss', gulp.series('sass'));
-  gulp.watch('js/*.js', gulp.series('scripts'));
+  gulp.watch(config.sass.srcFiles, gulp.series('sass'));
+  gulp.watch(config.scripts.srcFiles, gulp.series('scripts'));
 });
 
 /**
@@ -58,7 +59,7 @@ gulp.task('build-theme', function () {
  * Processes sass files.
  */
 gulp.task('sass', function () {
-  return gulp.src(config.sass.srcFiles)
+  return gulp.src('scss/**/*.scss')
     .pipe(sassGlob())
     .pipe(sourcemaps.init())
     .pipe(sass(config.sass.options).on('error', sass.logError))

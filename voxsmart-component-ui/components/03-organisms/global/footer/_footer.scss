@@ -3,15 +3,12 @@
   color: $c-gray--15;
   font-size: $font-size-xs;
   text-align: center;
+  padding-top: $space;
+  padding-bottom: $space;
 
-  &__container {
-    padding-top: $space;
-    padding-bottom: $space;
-
-    @include media('>medium') {
-      padding-top: $space-half;
-      padding-bottom: $space-half;
-    }
+  @include media('>medium') {
+    padding-top: $space-quarter;
+    padding-bottom: $space-quarter;
   }
 
   &__content {
@@ -48,7 +45,7 @@
 
   &__privacy {
     @include o-link($c-gray--15, $c-white);
-    margin-bottom: $space-half;
+    margin-bottom: $space-quarter;
 
     @include media('>medium') {
       margin-bottom: 0;

@@ -4,16 +4,16 @@
     "social_links": {
       "items": [
         {
-          "name": "instagram",
-          "url": "https://instagram.com"
+          "name": "linkedin",
+          "url": "https://www.linkedin.com/company/voxsmart"
         },
         {
-          "name": "linkedin",
-          "url": "https://linkedin.com"
+          "name": "instagram",
+          "url": "https://www.instagram.com/voxsmart/"
         },
         {
           "name": "twitter",
-          "url": "https://twitter.com"
+          "url": "https://twitter.com/voxsmartglobal?lang=en"
         }
       ]
     }

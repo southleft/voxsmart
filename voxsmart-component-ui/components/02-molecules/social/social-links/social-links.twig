@@ -1,0 +1,25 @@
+{% set base_class = social_links.base_class|default('c-social-links') %}
+{% if social_links.items %}
+  <div class="{{ bem(base_class, social_links.element, social_links.modifiers, social_links.extra) }}">
+    {% for link in social_links.items %}
+      {% if link.url %}
+        {% include "@link" with {
+          "link": {
+            "url": link.url,
+            "target": "_blank",
+            "extra": bem(base_class, 'item', link.name),
+            "icon_before": {
+              "icon": {
+                "name": "icon-social-" ~ link.name,
+                "modifiers": "small"
+              }
+            },
+            "attributes": {
+              "aria-label": link.name|capitalize
+            }
+          }
+        } %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

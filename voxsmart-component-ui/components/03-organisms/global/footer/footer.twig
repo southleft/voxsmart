@@ -1,1 +1,44 @@
 {% set base_class = footer.base_class|default('c-footer') %}
+<footer class="{{ bem(base_class, footer.element, footer.modifiers, footer.extra) }} l-wrap" role="contentinfo">
+  <div class="{{ bem(base_class, 'container') }} l-container" data-bp="grid 6@md">
+    <div class="{{ bem(base_class, 'content', 'left') }}">
+      {% render "@logo" with {
+        "logo": {
+          "link": site.link,
+          "icon": {
+            "name": "icon-logo-mark-outline",
+            "modifiers": "small",
+            "extra": "u-path-fill--white"
+          },
+          "text": {
+            "extra": "u-path-fill--white"
+          },
+          "extra": bem(base_class, 'logo')
+        }
+      } %}
+      {% render "@footer-nav" with {
+        "footer_nav": {
+          "extra": bem(base_class, 'nav')
+        }
+      } %}
+    </div>
+    <div class="{{ bem(base_class, 'content', 'right') }}">
+      <div class="{{ bem(base_class, 'copyright') }}">
+        © {{ "now"|date('Y') }} {{ site.name }}, All Rights Reserved.
+      </div>
+      {% include "@link" with {
+        "link": {
+          "url": "/privacy-policy",
+          "text": "Privacy & Terms",
+          "target": "_blank",
+          "extra": bem(base_class, 'privacy')
+        }
+      } %}
+      {% render "@social-links" with {
+        "social_links": {
+          "extra": bem(base_class, 'social')
+        }
+      } %}
+    </div>
+  </div>
+</footer>

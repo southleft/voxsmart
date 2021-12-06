@@ -38,7 +38,47 @@ fractal.web.set('server.watch', true);
 /*
  * Require the Twig adapter
  */
-const twigAdapter = require('@frctl/twig')();
+const twigAdapter = require('@frctl/twig')({
+  functions: {
+    bem: function(base, element, modifiers, extras) {
+      var modifier = '';
+      var extra = '';
+      if (element) {
+        var base = base + '__' + element;
+      }
+      if (modifiers) {
+        if (Array.isArray(modifiers)) {
+          for (var modifier_item of modifiers.values()) {
+            modifier += ' ' + base + '--' + modifier_item;
+          }
+        } else {
+          modifier += ' ' + base + '--' + modifiers;
+        }
+      }
+      if (extras) {
+        if (Array.isArray(extras)) {
+          for (var extra_item of extras.values()) {
+            extra += ' ' + extra_item;
+          }
+        } else {
+          extra += ' ' + extras;
+        }
+      }
+      return base + modifier + extra;
+    },
+    attributes: function(attributes) {
+      var attribute = '';
+      if (attributes) {
+        for (var key in attributes) {
+          if (key != '_keys') {
+            attribute += ' ' + key + '="' + attributes[key] + '"';
+          }
+        }
+      }
+      return attribute;
+    }
+  }
+});
 fractal.components.engine(twigAdapter);
 fractal.components.set('ext', '.twig');
 

@@ -1,0 +1,19 @@
+{% set base_class = footer_nav.base_class|default('c-footer-nav') %}
+{% if footer_nav.items %}
+  <nav role="navigation" class="{{ bem(base_class, footer_nav.element, footer_nav.modifiers, footer_nav.extra) }}">
+    <ul class="{{ bem(base_class, 'parent-list') }} u-spacing--left">
+      {% for item in footer_nav.items %}
+        <li class="{{ bem(base_class, 'parent-list-item') }}">
+          {% include "@link" with {
+            "link": {
+              "text": item.text,
+              "url": item.url,
+              "target": item.target,
+              "extra": bem(base_class, 'link'),
+            }
+          } %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

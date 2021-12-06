@@ -1,0 +1,21 @@
+{
+  "title": "Social Links",
+  "context": {
+    "social_links": {
+      "items": [
+        {
+          "name": "instagram",
+          "url": "https://instagram.com"
+        },
+        {
+          "name": "linkedin",
+          "url": "https://linkedin.com"
+        },
+        {
+          "name": "twitter",
+          "url": "https://twitter.com"
+        }
+      ]
+    }
+  }
+}

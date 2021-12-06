@@ -1,7 +1,6 @@
+{% set base_class = image.base_class|default('o-image') %}
 {% if image.src %}
-  {% set base_class = image.base_class|default('o-image') %}
-
-  <img class="{{ base_class }}" loading="lazy"
+  <img class="{{ bem(base_class, image.element, image.modifiers, image.extra) }}" loading="lazy"
     {% if image.srcset %}
       srcset="{{ image.srcset }}"
     {% endif %}

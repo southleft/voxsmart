@@ -1,0 +1,10 @@
+.c-footer-nav {
+  ul {
+    list-style-type: none;
+    display: inline-flex;
+  }
+
+  &__link {
+    @include o-link($c-gray--15, $c-white);
+  }
+}

@@ -1,18 +1,14 @@
+{% set block_class = button.block_class|default('o-button') %}
+{% set button_tag = 'button' %}
+{% if button.url %}
+  {% set button_tag = 'a' %}
+{% endif %}
 {% if button.url or button.text or button.icon %}
-  {% set button_tag = 'button' %}
-  {% if button.url %}
-    {% set button_tag = 'a' %}
-  {% endif %}
-
-  <{{ button_tag }} role="button" class="o-button {{ button.classes }}" {{ button.url ? 'href="' ~ button.url ~ '"' }} {{ button.target == '_blank' ? ' target="_blank" rel="noreferrer"' }} {{ button.attributes }}>
-    {% if button.icon_before %}
-      {% include "@icon" with "icon": button.icon_before %}
-    {% endif %}
+  <{{ button_tag }} role="button" class="{{ bem(block_class, button.element, button.modifiers, button.extra) }}" {{ button.url ? 'href="' ~ button.url ~ '"' }} {{ button.target == '_blank' ? ' target="_blank" rel="noreferrer"' }} {{ attributes(button.attributes) }}>
+    {% include "@icon" with button.icon_before %}
     {% if button.text %}
       <span>{{ button.text }}</span>
     {% endif %}
-    {% if button.icon_after %}
-      {% include "@icon" with "icon": button.icon_after %}
-    {% endif %}
+    {% include "@icon" with button.icon_after %}
   </{{ button_tag }}>
 {% endif %}

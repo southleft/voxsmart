@@ -1,14 +1,40 @@
 .o-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
+  display: block;
 
   &__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    min-width: 130px;
+    max-width: 130px;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &--horizontal {
+    .o-icon {
+      margin-right: $space-half;
+    }
+  }
+
+  &--stacked {
+    .o-icon {
+      margin-bottom: $space-half;
+    }
+
+    .o-logo__link {
+      flex-direction: column;
+    }
+
+    .o-logo__text {
+      min-width: 100px;
+      max-width: 100px;
+    }
   }
 }

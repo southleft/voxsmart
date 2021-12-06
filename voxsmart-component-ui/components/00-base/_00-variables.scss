@@ -9,31 +9,32 @@ $tests: true;
 */
 
 // Brand Colors
+$c-red: #FF0000;
+$c-red--dark: #E32D22;
 $c-blue: #2C8EF8;
-$c-red: #E32D22;
 $c-green: #70DB98;
 $c-yellow: #FFC575;
 
 // Neutrals
 $c-black: #000;
-$c-dark: #0F1016;
+$c-gray--dark: #0F1016;
 $c-gray--85: #1E202D;
 $c-gray--75: #313340;
 $c-gray--60: #585A66;
 $c-gray--45: #82828F;
 $c-gray--30: #A5A8B4;
 $c-gray--15: #D3D3DB;
-$c-light: #F2F3F6;
+$c-gray--light: #F2F3F6;
 $c-white: #fff;
 
 // Theme Colors
-$c-primary: $c-red;
+$c-primary: $c-red--dark;
 $c-secondary: $c-blue;
 $c-tertiary: $c-green;
 $c-quaternary: $c-yellow;
 
 // Body/Border Color
-$c-body: $c-dark;
+$c-body: $c-gray--dark;
 $c-border: $c-gray--15;
 
 // Default Colors
@@ -93,12 +94,12 @@ $max-width-xxl: $xxlarge;
 /**
  * Icons.
  */
-$icon-xsmall: 16px;
-$icon-small: 20px;
+$icon-xsmall: 18px;
+$icon-small: 26px;
 $icon-medium: 30px;
-$icon-large: 35px;
-$icon-xlarge: 45px;
-$icon-xxlarge: 80px;
+$icon-large: 40px;
+$icon-xlarge: 50px;
+$icon-xxlarge: 120px;
 
 /**
  * Border/Shadow Styles.
@@ -116,7 +117,7 @@ $button-background-disabled-color: $c-gray--30;
 
 // Primary
 $button-color--primary: $c-white;
-$button-background-color--primary: $c-dark;
+$button-background-color--primary: $c-gray--dark;
 $button-hover-color--primary: $c-white;
 $button-background-hover-color--primary: $c-gray--75;
 
@@ -128,7 +129,7 @@ $button-background-hover-color--secondary: $c-gray--45;
 
 // Text Link
 $link-color: $c-gray--75;
-$link-hover-color: $c-dark;
+$link-hover-color: $c-gray--dark;
 $link-active-color: $c-gray--60;
 $link-disabled-color: $c-gray--45;
 

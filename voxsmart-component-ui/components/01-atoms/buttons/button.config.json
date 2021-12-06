@@ -1,35 +1,49 @@
 {
   "title": "Buttons",
-	"default": "primary",
+  "default": "primary",
   "context": {
-		"button": {
-			"text": "Package &amp; Download",
-			"url": "https://google.com"
-		}
+    "button": {
+      "text": "Package &amp; Download",
+      "url": "https://google.com"
+    }
   },
-	"variants": [
-		{
-			"name": "secondary",
+  "variants": [
+    {
+      "name": "primary with left icon",
       "context": {
-				"button": {
-        	"text": "Dismiss Alert",
-					"classes": "o-button--secondary"
-				}
+        "button": {
+          "text": "View More",
+          "icon_before": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-back"
+            }
+          }
+        }
       }
-		},
-		{
-			"name": "With Right Icon",
+    },
+    {
+      "name": "primary with right icon",
       "context": {
-				"button": {
-					"text": "View More",
-        	"icon_after": {
-						"icon": {
-							"title": "icon",
-							"name": "icon-arrow-right"
-						}
-					}
-				}
+        "button": {
+          "text": "View More",
+          "icon_after": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-next"
+            }
+          }
+        }
       }
-		}
-	]
+    },
+    {
+      "name": "secondary",
+      "context": {
+        "button": {
+          "text": "Dismiss Alert",
+          "modifiers": "secondary"
+        }
+      }
+    }
+  ]
 }

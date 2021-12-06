@@ -1,0 +1,53 @@
+{
+  "title": "Logos",
+  "default": "Horizontal",
+  "context": {
+    "logo": {
+      "link": "/",
+      "icon": {
+        "name": "icon-logo-mark",
+        "title": "VoxSmart",
+        "modifiers": "large",
+        "extra": "u-path-fill--red"
+      },
+      "text": {
+        "extra": "u-path-fill--black"
+      },
+      "modifiers": "horizontal"
+    }
+  },
+  "variants": [
+    {
+      "name": "Stacked",
+      "context": {
+        "logo": {
+          "icon": {
+            "modifiers": "medium"
+          },
+          "modifiers": "stacked"
+        }
+      }
+    },
+    {
+      "name": "Mark",
+      "context": {
+        "logo": {
+          "text": false,
+          "modifiers": "mark"
+        }
+      }
+    },
+    {
+      "name": "Mark Outline",
+      "context": {
+        "logo": {
+          "icon": {
+            "name": "icon-logo-mark-outline"
+          },
+          "text": false,
+          "modifiers": "mark-outline"
+        }
+      }
+    }
+  ]
+}

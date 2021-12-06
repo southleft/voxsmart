@@ -1,0 +1,12 @@
+.c-social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    @include o-link($c-gray--15, $c-white);
+    display: block;
+    padding: $space-quarter;
+  }
+}

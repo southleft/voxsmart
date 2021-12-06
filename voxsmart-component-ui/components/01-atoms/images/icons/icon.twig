@@ -1,5 +1,6 @@
+{% set base_class = icon.base_class|default('o-icon') %}
 {% if icon.name %}
-  <span class="o-icon {{ icon.classes }}" aria-label="{{ icon.title ? icon.title : icon.name|capitalize }}">
+  <div class="{{ bem(base_class, icon.element, icon.modifiers, icon.extra) }}">
     {% include "@" ~ icon.name %}
-  </span>
+  </div>
 {% endif %}

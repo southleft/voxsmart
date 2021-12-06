@@ -1,8 +1,54 @@
 {
+  "title": "Links",
+  "default": "default",
   "context": {
-		"link": {
-			"text": "Label",
-			"url": "https://google.com"
-		}
-  }
+    "link": {
+      "text": "Link Text",
+      "url": "https://google.com",
+      "target": "_blank"
+    }
+  },
+  "variants": [
+    {
+      "name": "with left icon",
+      "context": {
+        "link": {
+          "icon_before": {
+            "icon": {
+              "name": "icon-arrows-line-back"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "with right icon",
+      "context": {
+        "link": {
+          "icon_after": {
+            "icon": {
+              "name": "icon-arrows-line-next"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "with left and right icon",
+      "context": {
+        "link": {
+          "icon_before": {
+            "icon": {
+              "name": "icon-arrows-line-back"
+            }
+          },
+          "icon_after": {
+            "icon": {
+              "name": "icon-arrows-line-next"
+            }
+          }
+        }
+      }
+    }
+  ]
 }

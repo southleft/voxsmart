@@ -13,10 +13,22 @@
   &:focus {
     text-decoration: underline;
     text-underline-position: under;
+    color: $color-hover;
   }
 
-  span + span {
+  .o-icon + span,
+  span + .o-icon {
     margin-left: $space-half;
+  }
+
+  svg {
+    width: $icon-xsmall;
+    height: $icon-xsmall;
+
+    * {
+      fill: currentColor;
+      transition: $transition-all;
+    }
   }
 }
 

@@ -1,4 +1,17 @@
+{% set base_class = logo.base_class|default("o-logo") %}
 {% if logo %}
-  {% set base_class = logo.base_class|default("o-logo") %}
-
+  <div class="{{ bem(base_class, logo.element, logo.modifiers, logo.extra) }}">
+    {% if logo.link %}
+      <a href="{{ logo.link }}" class="{{ bem(base_class, 'link') }}" {{ attributes(logo.attributes) }}>
+    {% endif %}
+      {% include "@icon" with logo %}
+      {% if logo.text %}
+        <div class="{{ bem(base_class, 'text', logo.text.modifiers, logo.text.extra) }}">
+          {% include "@icon-logo-text" %}
+        </div>
+      {% endif %}
+    {% if logo.link %}
+      </a>
+    {% endif %}
+  </div>
 {% endif %}

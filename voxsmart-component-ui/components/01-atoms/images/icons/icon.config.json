@@ -1,9 +1,11 @@
 {
-  "handle": "icon",
+  "title": "Icons",
+  "default": "Logo Mark",
   "context": {
-		"icon": {
-			"title": "Icon",
-			"name": "icon-arrow--left"
-		}
+    "icon": {
+      "name": "icon-logo-mark",
+      "modifiers": "small",
+      "extra": "u-path-fill--black"
+    }
   }
 }

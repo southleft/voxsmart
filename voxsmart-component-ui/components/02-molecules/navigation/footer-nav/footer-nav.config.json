@@ -1,0 +1,20 @@
+{
+  "context": {
+    "footer_nav": {
+      "items": [
+        {
+          "text": "Products",
+          "url": "/"
+        },
+        {
+          "text": "Support",
+          "url": "/"
+        },
+        {
+          "text": "Contact",
+          "url": "/"
+        }
+      ]
+    }
+  }
+}

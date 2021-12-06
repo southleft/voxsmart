@@ -30,6 +30,12 @@ $sides: ("": "", --top: "-top", --bottom: "-bottom", --left: "-left", --right: "
   }
 }
 
+.u-spacing--half--left {
+  & > * + * {
+    margin-left: $space-half;
+  }
+}
+
 .u-spacing--quarter--left {
   & > * + * {
     margin-left: $space-quarter;

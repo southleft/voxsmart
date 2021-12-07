@@ -1,4 +1,4 @@
-@mixin o-link($color: $link-color, $color-hover: $link-hover-color) {
+@mixin o-link($color: $link-color, $color-hover: $link-hover-color, $color-active: $link-active-color) {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -9,11 +9,21 @@
   color: $color;
   font-weight: 600;
 
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: underline;
     text-underline-position: under;
     color: $color-hover;
+  }
+
+  &:active,
+  &:focus {
+    color: $color-active;
+  }
+
+  &:disabled,
+  &[disabled] {
+    color: $link-disabled-color;
+    pointer-events: none;
   }
 
   .o-icon + span,

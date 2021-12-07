@@ -1,10 +1,10 @@
 {% set base_class = link.base_class|default('o-link') %}
 {% if link.url %}
   <a class="{{ bem(base_class, link.element, link.modifiers, link.extra) }}" href="{{ link.url }}"{{ link.target == '_blank' ? ' target="_blank" rel="noreferrer"' : ' target="_self"' }} {{ attributes(link.attributes) }}>
-    {% include "@icon" with link.icon_before %}
+    {% include "@icon" with link.icon_left %}
     {% if link.text %}
       <span>{{ link.text }}</span>
     {% endif %}
-    {% include "@icon" with link.icon_after %}
+    {% include "@icon" with link.icon_right %}
   </a>
 {% endif %}

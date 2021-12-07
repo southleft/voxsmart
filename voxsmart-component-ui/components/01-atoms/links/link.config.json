@@ -3,7 +3,7 @@
   "default": "default",
   "context": {
     "link": {
-      "text": "Link Text",
+      "text": "Label",
       "url": "https://google.com",
       "target": "_blank"
     }
@@ -13,7 +13,7 @@
       "name": "with left icon",
       "context": {
         "link": {
-          "icon_before": {
+          "icon_left": {
             "icon": {
               "name": "icon-arrows-line-back"
             }
@@ -25,7 +25,7 @@
       "name": "with right icon",
       "context": {
         "link": {
-          "icon_after": {
+          "icon_right": {
             "icon": {
               "name": "icon-arrows-line-next"
             }
@@ -37,15 +37,25 @@
       "name": "with left and right icon",
       "context": {
         "link": {
-          "icon_before": {
+          "icon_left": {
             "icon": {
               "name": "icon-arrows-line-back"
             }
           },
-          "icon_after": {
+          "icon_right": {
             "icon": {
               "name": "icon-arrows-line-next"
             }
+          }
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "link": {
+          "attributes": {
+            "disabled": true
           }
         }
       }

@@ -3,8 +3,8 @@
   "default": "primary",
   "context": {
     "button": {
-      "text": "Package &amp; Download",
-      "url": "https://google.com"
+      "text": "Label",
+      "url": "#"
     }
   },
   "variants": [
@@ -12,8 +12,7 @@
       "name": "primary with left icon",
       "context": {
         "button": {
-          "text": "View More",
-          "icon_before": {
+          "icon_left": {
             "icon": {
               "title": "icon",
               "name": "icon-arrows-line-back"
@@ -26,8 +25,7 @@
       "name": "primary with right icon",
       "context": {
         "button": {
-          "text": "View More",
-          "icon_after": {
+          "icon_right": {
             "icon": {
               "title": "icon",
               "name": "icon-arrows-line-next"
@@ -37,10 +35,97 @@
       }
     },
     {
+      "name": "primary with left and right icon",
+      "context": {
+        "button": {
+          "icon_left": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-back"
+            }
+          },
+          "icon_right": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-next"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "primary disabled",
+      "context": {
+        "button": {
+          "attributes": {
+            "disabled": true
+          }
+        }
+      }
+    },
+    {
       "name": "secondary",
       "context": {
         "button": {
-          "text": "Dismiss Alert",
+          "modifiers": "secondary"
+        }
+      }
+    },
+    {
+      "name": "secondary with left icon",
+      "context": {
+        "button": {
+          "icon_left": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-back"
+            }
+          },
+          "modifiers": "secondary"
+        }
+      }
+    },
+    {
+      "name": "secondary with right icon",
+      "context": {
+        "button": {
+          "icon_right": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-next"
+            }
+          },
+          "modifiers": "secondary"
+        }
+      }
+    },
+    {
+      "name": "secondary with left and right icon",
+      "context": {
+        "button": {
+          "icon_left": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-back"
+            }
+          },
+          "icon_right": {
+            "icon": {
+              "title": "icon",
+              "name": "icon-arrows-line-next"
+            }
+          },
+          "modifiers": "secondary"
+        }
+      }
+    },
+    {
+      "name": "secondary disabled",
+      "context": {
+        "button": {
+          "attributes": {
+            "disabled": true
+          },
           "modifiers": "secondary"
         }
       }

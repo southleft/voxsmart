@@ -18,7 +18,6 @@
   font-weight: 500;
   line-height: 24px;
 
-  &:focus,
   &:hover {
     color: $color-hover;
     background-color: $bg-color-hover;
@@ -28,6 +27,11 @@
   &[disabled] {
     color: $button-disabled-color;
     background-color: $button-background-disabled-color;
+    pointer-events: none;
+
+    &.o-button--icon-right:not(.o-button--icon-left) span + .o-icon {
+      border-left-color: $c-gray--15;
+    }
   }
 
   .o-icon + span,
@@ -43,10 +47,39 @@
       fill: currentColor;
     }
   }
+
+  &--icon-right:not(.o-button--icon-left) {
+    min-width: 150px;
+    text-align: left;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
+
+    span {
+      padding: 8px $space;
+    }
+
+    span + .o-icon {
+      padding: 0 $space-half;
+      border-left: 1px solid $c-gray--60;
+      transition: $transition-all;
+    }
+  }
 }
 
 @mixin o-button--secondary {
   @include o-button($button-background-color--secondary, $button-color--secondary, $button-background-hover-color--secondary, $button-hover-color--secondary);
+
+  &.o-button--icon-right:not(.o-button--icon-left) span + .o-icon {
+    border-left-color: $c-gray--45;
+  }
+
+  &:hover,
+  &:focus {
+    &.o-button--icon-right:not(.o-button--icon-left) span + .o-icon {
+      border-left-color: $c-gray--30;
+    }
+  }
 }
 
 @mixin o-button--small {

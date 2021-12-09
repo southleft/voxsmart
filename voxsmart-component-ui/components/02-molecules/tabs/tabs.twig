@@ -1,0 +1,11 @@
+{% set base_class = tabs.base_class|default('c-tabs') %}
+{% if tabs.items %}
+  <ul class="{{ bem(base_class, tabs.element, tabs.modifiers, tabs.extra) }}">
+    {% for item in tabs.items %}
+      <li class="{{ bem(base_class, 'item') }} js-tab{{ loop.first ? " is-active" }}">
+        <p class="{{ bem(base_class, 'item-title') }}">{{ item.title }}</p>
+        <p class="{{ bem(base_class, 'item-description') }}">{{ item.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -1,0 +1,66 @@
+{
+  "title": "Tabs",
+  "default": "2 column",
+  "context": {
+    "tabs": {
+      "items": [
+        {
+          "title": "Tab Item 1",
+          "description": "xx dolor sit"
+        },
+        {
+          "title": "Tab Item 2",
+          "description": "xx dolor sit"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "name": "3 column",
+      "context": {
+        "tabs": {
+          "items": [
+            {
+              "title": "Tab Item 1",
+              "description": "xx dolor sit"
+            },
+            {
+              "title": "Tab Item 2",
+              "description": "xx dolor sit"
+            },
+            {
+              "title": "Tab Item 3",
+              "description": "xx dolor sit"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "4 column",
+      "context": {
+        "tabs": {
+          "items": [
+            {
+              "title": "Tab Item 1",
+              "description": "xx dolor sit"
+            },
+            {
+              "title": "Tab Item 2",
+              "description": "xx dolor sit"
+            },
+            {
+              "title": "Tab Item 3",
+              "description": "xx dolor sit"
+            },
+            {
+              "title": "Tab Item 4",
+              "description": "xx dolor sit"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

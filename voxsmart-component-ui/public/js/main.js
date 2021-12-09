@@ -1,3 +1,6 @@
+/**
+* Form - Input Focus
+*/
 var InputFocus = function() {
   var actions = {
     activate: function(el) {
@@ -23,6 +26,9 @@ var InputFocus = function() {
 }
 InputFocus();
 
+/**
+* Form - Select Focus
+*/
 var SelectFocus = function() {
   var actions = {
     activate: function(el) {
@@ -42,3 +48,16 @@ var SelectFocus = function() {
   })
 }
 SelectFocus();
+
+/**
+* Tabs
+*/
+document.querySelectorAll('.js-tab').forEach(el => {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelectorAll('.js-tab').forEach(function(el) {
+      el.classList.remove('is-active');
+    });
+    el.classList.add('is-active');
+  });
+});

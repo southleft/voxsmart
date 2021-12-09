@@ -32,7 +32,7 @@
 
 @mixin o-label {
   font-weight: bold;
-  font-size: 10px;
+  font-size: $font-size-xxs;
   line-height: 12px;
   text-transform: uppercase;
   color: $c-gray--45;

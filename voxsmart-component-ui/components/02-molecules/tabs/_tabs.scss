@@ -1,0 +1,42 @@
+.c-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  align-items: flex-end;
+  list-style-type: none;
+  box-shadow: 0px 5px 10px rgba(15, 16, 22, 0.15);
+
+  &__item {
+    padding: $space;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: $transition-all;
+    cursor: pointer;
+
+    &-title {
+      font-weight: 500;
+    }
+
+    &-description {
+      color: $c-gray--60;
+      font-size: $font-size-xxs;
+      margin-top: $space-quarter;
+      transition: $transition-all;
+    }
+
+    &:not(:first-child) {
+      border-left: 1px solid $c-gray--30;
+    }
+
+    &:hover,
+    &.is-active {
+      background-color: $c-gray--dark;
+      color: $c-white;
+
+      .c-tabs__item-description {
+        color: $c-white;
+      }
+    }
+  }
+}

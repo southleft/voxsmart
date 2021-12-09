@@ -164,6 +164,7 @@ $z-index-back-to-top: $z-index-100;
 
 :root {
   --font-size-body: 14px;
+  --font-size-xxs: 10px;
   --font-size-xs: 12px;
   --font-size-h6: 14px;
   --font-size-h5: 16px;
@@ -184,6 +185,7 @@ $z-index-back-to-top: $z-index-100;
  * Font Sizes.
  */
 $font-size-body: var(--font-size-body, 14px);
+$font-size-xxs: var(--font-size-xs, 10px);
 $font-size-xs: var(--font-size-xs, 12px);
 $font-size-h6: var(--font-size-h6, 14px);
 $font-size-h5: var(--font-size-h5, 18px);

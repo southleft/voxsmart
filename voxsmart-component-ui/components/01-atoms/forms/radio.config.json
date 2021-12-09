@@ -1,0 +1,9 @@
+{
+  "title": "Radio",
+  "context": {
+    "radio": {
+      "name": "radio-name",
+      "label": "Radio label"
+    }
+  }
+}

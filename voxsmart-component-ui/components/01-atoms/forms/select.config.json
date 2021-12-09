@@ -1,0 +1,76 @@
+{
+  "title": "Inputs",
+  "default": "select",
+  "context": {
+    "select": {
+      "name": "select",
+      "label": "Label",
+      "options": [
+        {
+          "text": "Select one",
+          "value": "select-one"
+        },
+        {
+          "text": "Option 1",
+          "value": "option-1"
+        },
+        {
+          "text": "Option 2",
+          "value": "option-2"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "name": "select with value",
+      "context": {
+        "select": {
+          "name": "select",
+          "label": "Label",
+          "options": [
+            {
+              "text": "Select one",
+              "value": "select-one"
+            },
+            {
+              "text": "Option 1",
+              "value": "option-1",
+              "attributes": {
+                "selected": true
+              }
+            },
+            {
+              "text": "Option 2",
+              "value": "option-2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "select diabled",
+      "context": {
+        "select": {
+          "name": "select",
+          "label": "Label",
+          "attributes": {
+            "disabled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "select required",
+      "context": {
+        "select": {
+          "name": "select",
+          "label": "Label",
+          "attributes": {
+            "required": true
+          }
+        }
+      }
+    }
+  ]
+}

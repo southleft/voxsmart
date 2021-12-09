@@ -1,0 +1,117 @@
+{
+  "title": "Inputs",
+  "default": "text",
+  "context": {
+    "input": {
+      "name": "input-name",
+      "label": "Label",
+      "type": "text"
+    }
+  },
+  "variants": [
+    {
+      "name": "phone",
+      "context": {
+        "input": {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "attributes": {
+            "data-hint": "(xxx) xxx-xxxx"
+          }
+        }
+      }
+    },
+    {
+      "name": "email",
+      "context": {
+        "input": {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "icon": {
+            "title": "Email",
+            "name": "icon-content-type-email"
+          },
+          "attributes": {
+            "data-hint": "Enter email address"
+          }
+        }
+      }
+    },
+    {
+      "name": "email disabled",
+      "context": {
+        "input": {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "icon": {
+            "title": "Email",
+            "name": "icon-content-type-email"
+          },
+          "attributes": {
+            "data-hint": "Enter email address",
+            "disabled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "email disabled with value",
+      "context": {
+        "input": {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "icon": {
+            "title": "Email",
+            "name": "icon-content-type-email"
+          },
+          "attributes": {
+            "data-hint": "Enter email address",
+            "disabled": true,
+            "value": "email@gmail.com"
+          }
+        }
+      }
+    },
+    {
+      "name": "email required",
+      "context": {
+        "input": {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "icon": {
+            "title": "Email",
+            "name": "icon-content-type-email"
+          },
+          "attributes": {
+            "data-hint": "Enter email address",
+            "required": true
+          }
+        }
+      }
+    },
+    {
+      "name": "email required with value",
+      "context": {
+        "input": {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "icon": {
+            "title": "Email",
+            "name": "icon-content-type-email"
+          },
+          "attributes": {
+            "data-hint": "Enter email address",
+            "value": "email@gmail.com",
+            "required": true
+          }
+        }
+      }
+    }
+  ]
+}

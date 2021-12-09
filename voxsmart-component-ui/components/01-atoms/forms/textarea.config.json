@@ -1,0 +1,11 @@
+{
+  "title": "Textarea",
+  "context": {
+    "textarea": {
+      "name": "textarea-name",
+      "label": "Label",
+      "rows": 5,
+      "cols": 10
+    }
+  }
+}

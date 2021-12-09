@@ -171,14 +171,6 @@ $z-index-back-to-top: $z-index-100;
   --font-size-h3: 24px;
   --font-size-h2: 30px;
   --font-size-h1: 36px;
-  --space: 20px;
-}
-
-// Medium Breakpoint
-@media screen and (min-width: $medium) {
-  :root {
-    --space: 30px;
-  }
 }
 
 // Large Breakpoint
@@ -204,12 +196,12 @@ $font-size-h1: var(--font-size-h1, 42px);
  * Grid.
  */
 $grid-columns: 12;
-$gutter: var(--space, 20px);
+$gutter: 20px;
 
 /**
  * Spacing.
  */
-$space: var(--space, 20px);
+$space: 20px;
 
 /**
  * Spacing - Times.

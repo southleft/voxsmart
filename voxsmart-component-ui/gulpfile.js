@@ -21,7 +21,7 @@ config.scripts = {
   srcFiles: [
     './scripts/*.js'
   ],
-  destDir: './public/scripts/'
+  destDir: './public/js/'
 };
 
 // Load Gulp and other tools.
@@ -74,7 +74,7 @@ gulp.task('sass', function () {
 gulp.task('scripts', function () {
   return gulp.src(config.scripts.srcFiles)
     .pipe(sourcemaps.write('./'))
-    .pipe(concat('script.js'))
+    .pipe(concat('main.js'))
     .pipe(minify())
     .pipe(gulp.dest(config.scripts.destDir));
 });

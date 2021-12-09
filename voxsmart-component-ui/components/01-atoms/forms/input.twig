@@ -1,0 +1,10 @@
+{% set base_class = input.base_class|default('o-input') %}
+{% if input.name and input.type %}
+  <div class="{{ bem(base_class, input.element, input.modifiers, input.extra) }} o-form__item has-focus-effect">
+    {% if input.label %}
+      <label for="{{ input.name }}">{{ input.label }}</label>
+    {% endif %}
+    <input id="{{ input.name }}" class="js-input-focus" name="{{ input.name }}" type="{{ input.type }}" placeholder="{{ input.label }}" {{ attributes(input.attributes) }}/>
+    {% include "@icon" with input %}
+  </div>
+{% endif %}

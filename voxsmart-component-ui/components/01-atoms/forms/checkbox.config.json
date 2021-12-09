@@ -1,0 +1,9 @@
+{
+  "title": "Checkbox",
+  "context": {
+    "checkbox": {
+      "name": "checkbox-name",
+      "label": "Checkbox label"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Icon Notifications",
+  "default": "default",
+  "context": {
+    "icon": {
+      "text": "XX"
+    }
+  },
+  "variants": [
+    {
+      "name": "active",
+      "icon": {
+        "modifiers": "active"
+      }
+    },
+    {
+      "name": "inactive",
+      "icon": {
+        "modifiers": "inactive"
+      }
+    }
+  ]
+}

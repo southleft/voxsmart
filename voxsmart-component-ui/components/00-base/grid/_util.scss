@@ -49,7 +49,7 @@
 
 @for $i from 1 through $cols {
   [#{$prefix}~='#{$i}--max'] {
-    max-width: (($container-width / $cols) * $i) !important;
+    max-width: calc((#{$container-width} / #{$cols}) * #{$i}) !important;
   }
 }
 

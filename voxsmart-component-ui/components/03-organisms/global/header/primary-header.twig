@@ -1,0 +1,27 @@
+{% set base_class = primary_header.base_class|default('c-primary-header') %}
+<header role="banner" class="{{ bem(base_class, primary_header.element, primary_header.modifiers, primary_header.extra) }}">
+  {% render "@icon-menu-toggle" %}
+  {% include "@logo" with {
+    "logo": {
+      "link": site.link,
+      "icon": {
+        "name": "icon-logo-mark",
+        "modifiers": "large",
+        "extra": "u-path-fill--red"
+      },
+      "extra": bem(base_class, 'logo')
+    }
+  } %}
+  <div class="{{ bem(base_class, 'last-refresh') }}">
+    <p>last refresh</p>
+    <div>{{ primary_header.last_refresh }}</div>
+  </div>
+  {% include "@icon-notifications" with {
+    "icon": {
+      "text": primary_header.notifications.text,
+      "modifiers": primary_header.notifications.status,
+      "extra": bem(base_class, 'notifications')
+    }
+  } %}
+</header>
+{% render "@primary-nav" %}

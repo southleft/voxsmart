@@ -1,0 +1,22 @@
+{
+  "title": "Secondary Nav",
+  "default": "secondary nav",
+  "context": {
+    "secondary_nav": {
+      "items": [
+        {
+          "text": "Tier 1 Page",
+          "url": "/"
+        },
+        {
+          "text": "Tier 2 Page",
+          "url": "/"
+        },
+        {
+          "text": "Current Page",
+          "url": "/"
+        }
+      ]
+    }
+  }
+}

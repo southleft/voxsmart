@@ -1,0 +1,68 @@
+{
+  "title": "Primary Nav",
+  "default": "primary nav mobile",
+  "context": {
+    "primary_nav": {
+      "top": [
+        {
+          "text": "Report",
+          "url": "/",
+          "icon": {
+            "name": "icon-nav-graph"
+          }
+        },
+        {
+          "text": "Analyze",
+          "url": "/",
+          "icon": {
+            "name": "icon-nav-analyze"
+          },
+          "count": "2386"
+        },
+        {
+          "text": "Investigate",
+          "url": "/",
+          "icon": {
+            "name": "icon-nav-case"
+          },
+          "count": "35"
+        },
+        {
+          "text": "Reconstruct",
+          "url": "/",
+          "icon": {
+            "name": "icon-nav-trades"
+          },
+          "count": "24"
+        }
+      ],
+      "bottom": [
+        {
+          "text": "Policy & Lexicons",
+          "url": "/",
+          "icon": {
+            "name": "icon-nav-policy"
+          }
+        },
+        {
+          "text": "Team & Workflow",
+          "url": "/",
+          "icon": {
+            "name": "icon-nav-team"
+          },
+          "count": "2386"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "name": "primary nav desktop",
+      "context": {
+        "primary_nav": {
+          "extra": "is-active"
+        }
+      }
+    }
+  ]
+}

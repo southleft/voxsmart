@@ -18,30 +18,26 @@ This component library utilizes the following dependecies.
 ### Install into your project (recommended)
 
 ```shell
-npm install @frctl/fractal --save-dev
+npm install
 ```
 
 Then create your `fractal.config.js` file in the project root, and configure using the [official documentation][docs].
 
-Then you can either run `npx fractal start` to start up the project, or create an alias under the `scripts` section in your package.json as a shortcut.
+Start up the project with an alias under the `scripts` section in your package.json as a shortcut.
 
 e.g.
 
 ```json
 "scripts": {
-  "dev": "gulp",
+  "dev": "run-p gulp fractal:start",
+  "build": "run-s gulp production && fractal build",
+  "gulp": "gulp",
   "fractal:start": "fractal start --sync",
   "fractal:build": "fractal build"
 }
 ```
 
-then, in one shell to start up Fractal
-
-```shell
-npm run fractal:start
-```
-
-and in another shell to compile .js and .scss files
+Run the alias below in your shell to start up Fractal and watch scss/scripts.
 
 ```shell
 npm run dev

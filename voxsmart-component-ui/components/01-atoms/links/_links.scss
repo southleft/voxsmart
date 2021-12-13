@@ -34,10 +34,10 @@
   svg {
     width: $icon-xsmall;
     height: $icon-xsmall;
+    min-width: $icon-xsmall;
 
-    * {
+    path {
       fill: currentColor;
-      transition: $transition-all;
     }
   }
 }

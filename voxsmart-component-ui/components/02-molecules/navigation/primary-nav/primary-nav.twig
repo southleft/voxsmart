@@ -1,0 +1,52 @@
+{% set base_class = primary_nav.base_class|default('c-primary-nav') %}
+{% if primary_nav.top or primary_nav.bottom %}
+  <nav role="navigation" class="{{ bem(base_class, primary_nav.element, primary_nav.modifiers, primary_nav.extra) }}">
+    {% if primary_nav.top %}
+      <ul class="{{ bem(base_class, 'parent-list', 'top') }} u-spacing--quarter">
+        {% for item in primary_nav.top %}
+          <li class="{{ bem(base_class, 'parent-list-item') }}">
+            {% include "@link" with {
+              "link": {
+                "text": item.text,
+                "url": item.url,
+                "target": item.target,
+                "icon_left": {
+                  "icon": {
+                    "name": item.icon.name,
+                    "title": item.icon.title
+                  }
+                },
+                "attributes": {
+                  "data-count": item.count > 0 ? item.count : ''
+                },
+                "extra": bem(base_class, 'link'),
+              }
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if primary_nav.bottom %}
+      <ul class="{{ bem(base_class, 'parent-list', 'bottom') }} u-spacing--quarter">
+        {% for item in primary_nav.bottom %}
+          <li class="{{ bem(base_class, 'parent-list-item') }}">
+            {% include "@link" with {
+              "link": {
+                "text": item.text,
+                "url": item.url,
+                "target": item.target,
+                "icon_left": {
+                  "icon": {
+                    "name": item.icon.name,
+                    "title": item.icon.title
+                  }
+                },
+                "extra": bem(base_class, 'link'),
+              }
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </nav>
+{% endif %}

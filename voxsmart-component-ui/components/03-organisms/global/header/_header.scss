@@ -1,3 +1,31 @@
-.c-header {
+.c-primary-header {
+  background-color: $c-gray--dark;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: $space-half;
+  padding-right: $space;
+  border-bottom: 1px solid $c-gray--60;
 
+  @include media('>small') {
+    justify-content: flex-start;
+  }
+
+  &__logo {
+    background-color: $c-white;
+    border-radius: 50%;
+    margin-left: $space-half;
+    margin-right: $space;
+  }
+
+  &__last-refresh {
+    flex: 1;
+    color: $c-gray--15;
+    font-size: $font-size-xxs;
+
+    @include media('<=small') {
+      display: none;
+    }
+  }
 }

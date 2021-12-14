@@ -1,8 +1,6 @@
 {
-  "title": "Secondary Nav",
-  "default": "secondary nav",
   "context": {
-    "secondary_nav": {
+    "breadcrumbs": {
       "items": [
         {
           "text": "Tier 1 Page",

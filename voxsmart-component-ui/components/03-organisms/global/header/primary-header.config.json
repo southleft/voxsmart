@@ -2,10 +2,9 @@
   "title": "Primary Header",
   "context": {
     "primary_header": {
-      "last_refresh": "12.11.2021 at 13:43:01 EDT",
-      "notifications": {
-        "avatar": "XX",
-        "status": "active"
+      "last_refresh": "12.11.2021 13:43:01",
+      "icon": {
+        "avatar": "XX"
       }
     }
   }

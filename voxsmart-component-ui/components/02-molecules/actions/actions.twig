@@ -6,7 +6,6 @@
     {% endfor %}
     {% include "@button" with {
       "button": {
-        "url": item.url,
         "icon_left": {
           "icon" : {
             "name": "icon-actions-add",
@@ -16,29 +15,27 @@
         "attributes": {
           "aria-label": "Add User"
         },
-        "extra": bem(base_class, 'button', 'add'),
+        "extra": [bem(base_class, 'button', 'add'), 'js-actions-add-user']
       }
     } %}
   </div>
   {% include "@button" with {
     "button": {
-      "url": item.url,
       "text": "5",
       "icon_left": {
         "icon" : {
           "name": "icon-content-type-chat",
-          "title": "Notifications"
+          "title": "View Notifications"
         }
       },
       "attributes": {
-        "aria-label": "Notifications"
+        "aria-label": "View Notifications"
       },
-      "extra": bem(base_class, 'button', 'notifications'),
+      "extra": [bem(base_class, 'button', 'notifications'), 'js-actions-view-notifications']
     }
   } %}
   {% include "@button" with {
     "button": {
-      "url": item.url,
       "icon_left": {
         "icon" : {
           "name": "icon-content-type-time",
@@ -48,7 +45,7 @@
       "attributes": {
         "aria-label": "Time"
       },
-      "extra": bem(base_class, 'button', 'time'),
+      "extra": [bem(base_class, 'button', 'time'), 'js-actions-time']
     }
   } %}
 </div>

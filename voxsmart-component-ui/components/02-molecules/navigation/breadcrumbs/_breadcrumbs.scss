@@ -1,5 +1,4 @@
-.c-secondary-nav {
-
+.c-breadcrumbs {
   &__parent-list {
     display: flex;
     list-style-type: none;
@@ -7,7 +6,7 @@
 
   &__parent-list-item {
     &:not(:last-child) {
-      .c-secondary-nav__link {
+      .c-breadcrumbs__link {
         color: $c-gray--30;
         text-decoration: underline;
         text-underline-position: under;

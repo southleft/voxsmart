@@ -14,12 +14,12 @@
   } %}
   <div class="{{ bem(base_class, 'last-refresh') }}">
     <p>last refresh</p>
-    <div>{{ primary_header.last_refresh }}</div>
+    <div>{{ primary_header.last_refresh|date('m.d.Y \a\t H:i:s', false) }}</div>
   </div>
   {% include "@icon-user" with {
     "icon": {
-      "text": primary_header.notifications.text,
-      "modifiers": primary_header.notifications.status,
+      "avatar": primary_header.icon.avatar,
+      "modifiers": primary_header.icon.status,
       "extra": bem(base_class, 'notifications')
     }
   } %}

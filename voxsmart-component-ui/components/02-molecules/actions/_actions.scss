@@ -1,0 +1,77 @@
+.c-actions {
+  display: flex;
+  align-items: center;
+
+  &__users {
+    display: flex;
+    align-items: center;
+
+    .o-button {
+      margin-left: $space-half;
+    }
+
+    .o-icon-user {
+      margin-left: $space-quarter;
+      background-color: $c-gray--15;
+      width: $icon-medium;
+      min-width: $icon-medium;
+      height: $icon-medium;
+
+      &::after {
+        border-color: $c-gray--75;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__button {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    border-radius: 34px;
+    background-color: $c-gray--light;
+    position: relative;
+    color: $c-gray--dark;
+    font-size: 7px;
+    line-height: 1;
+    margin-left: $space;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 !important;
+      padding-bottom: 4px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+
+      path {
+        fill: $c-gray--dark;
+      }
+    }
+
+    &:hover {
+      background-color: $c-gray--15;
+      color: $c-gray--dark;
+    }
+
+    &--add {
+      svg {
+        width: 15px;
+        height: 15px;
+        min-width: 15px;
+      }
+    }
+  }
+}

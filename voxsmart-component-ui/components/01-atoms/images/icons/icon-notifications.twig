@@ -1,6 +1,0 @@
-{% set base_class = icon.base_class|default('o-icon-notifications') %}
-{% if icon.text %}
-  <div class="{{ bem(base_class, icon.element, icon.modifiers, icon.extra) }}">
-    {{ icon.text }}
-  </div>
-{% endif %}

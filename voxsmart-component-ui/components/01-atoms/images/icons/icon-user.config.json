@@ -1,9 +1,9 @@
 {
-  "title": "Icon Notifications",
+  "title": "Icon User",
   "default": "default",
   "context": {
     "icon": {
-      "text": "XX"
+      "avatar": "XX"
     }
   },
   "variants": [

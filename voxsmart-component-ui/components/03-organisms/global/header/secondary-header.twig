@@ -1,0 +1,7 @@
+{% set base_class = secondary_header.base_class|default('c-secondary-header') %}
+<header role="banner" class="{{ bem(base_class, secondary_header.element, secondary_header.modifiers, secondary_header.extra) }} l-wrap">
+  <div class="{{ bem(base_class, 'container') }} l-container">
+    {% render "@secondary-nav" %}
+    {% render "@actions" %}
+  </div>
+</header>

@@ -1,6 +1,6 @@
 .c-primary-header {
   background-color: $c-gray--dark;
-  height: $header-height;
+  height: $primary-header-height;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,6 +26,44 @@
 
     @include media('<=small') {
       display: none;
+    }
+  }
+}
+
+.c-secondary-header {
+  width: 100%;
+  height: auto;
+  background-color: $c-gray--75;
+  display: flex;
+  justify-content: center;
+  padding-top: $space-half;
+  padding-bottom: $space-half;
+
+  @include media('>small') {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: $secondary-header-height;
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .c-actions {
+      margin-top: $space-half;
+
+      @include media('>small') {
+        margin-left: $space;
+        margin-top: 0;
+      }
+    }
+
+    @include media('>small') {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }

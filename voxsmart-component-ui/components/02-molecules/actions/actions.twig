@@ -1,0 +1,54 @@
+{% set base_class = actions.base_class|default('c-actions') %}
+<div class="{{ bem(base_class, actions.element, actions.modifiers, actions.extra) }}">
+  <div class="{{ bem(base_class, 'users') }}">
+    {% for item in actions.users %}
+      {% include "@icon-user" with item %}
+    {% endfor %}
+    {% include "@button" with {
+      "button": {
+        "url": item.url,
+        "icon_left": {
+          "icon" : {
+            "name": "icon-actions-add",
+            "title": "Add User"
+          }
+        },
+        "attributes": {
+          "aria-label": "Add User"
+        },
+        "extra": bem(base_class, 'button', 'add'),
+      }
+    } %}
+  </div>
+  {% include "@button" with {
+    "button": {
+      "url": item.url,
+      "text": "5",
+      "icon_left": {
+        "icon" : {
+          "name": "icon-content-type-chat",
+          "title": "Notifications"
+        }
+      },
+      "attributes": {
+        "aria-label": "Notifications"
+      },
+      "extra": bem(base_class, 'button', 'notifications'),
+    }
+  } %}
+  {% include "@button" with {
+    "button": {
+      "url": item.url,
+      "icon_left": {
+        "icon" : {
+          "name": "icon-content-type-time",
+          "title": "Time"
+        }
+      },
+      "attributes": {
+        "aria-label": "Time"
+      },
+      "extra": bem(base_class, 'button', 'time'),
+    }
+  } %}
+</div>

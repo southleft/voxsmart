@@ -1,0 +1,26 @@
+{
+  "context": {
+    "actions": {
+      "users": [
+        {
+          "icon": {
+            "avatar": "XX",
+            "modifiers": "active"
+          }
+        },
+        {
+          "icon": {
+            "avatar": "XX",
+            "modifiers": "active"
+          }
+        },
+        {
+          "icon": {
+            "avatar": "XX",
+            "modifiers": "inactive"
+          }
+        }
+      ]
+    }
+  }
+}

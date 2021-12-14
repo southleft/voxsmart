@@ -1,0 +1,6 @@
+{% set base_class = icon.base_class|default('o-icon-user') %}
+{% if icon.avatar %}
+  <div class="{{ bem(base_class, icon.element, icon.modifiers, icon.extra) }}">
+    {{ icon.avatar }}
+  </div>
+{% endif %}

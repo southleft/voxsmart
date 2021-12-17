@@ -32,7 +32,7 @@ fractal.web.set('static.path', path.join(__dirname, 'public'));
 
 fractal.web.set('builder.dest', path.join(__dirname, 'export'));
 
-fractal.web.set('server.port', 4444);
+fractal.web.set('server.port', 3333);
 fractal.web.set('server.watch', true);
 
 /*

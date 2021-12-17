@@ -2,14 +2,13 @@
 <div class="{{ bem(base_class, actions.element, actions.modifiers, actions.extra) }}">
   <div class="{{ bem(base_class, 'users') }}">
     {% for item in actions.users %}
-      {% include "@icon-user" with item %}
+      {% include "@avatar" with item %}
     {% endfor %}
     {% include "@button" with {
       "button": {
         "icon_left": {
           "icon" : {
-            "name": "icon-actions-add",
-            "title": "Add User"
+            "name": "icon-actions-add"
           }
         },
         "attributes": {
@@ -24,8 +23,7 @@
       "text": "5",
       "icon_left": {
         "icon" : {
-          "name": "icon-content-type-chat",
-          "title": "View Notifications"
+          "name": "icon-content-type-chat"
         }
       },
       "attributes": {
@@ -38,8 +36,7 @@
     "button": {
       "icon_left": {
         "icon" : {
-          "name": "icon-content-type-time",
-          "title": "Time"
+          "name": "icon-content-type-time"
         }
       },
       "attributes": {

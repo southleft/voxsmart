@@ -10,16 +10,8 @@
       margin-left: $space-half;
     }
 
-    .o-icon-user {
+    .o-avatar {
       margin-left: $space-quarter;
-      background-color: $c-gray--15;
-      width: $icon-medium;
-      min-width: $icon-medium;
-      height: $icon-medium;
-
-      &::after {
-        border-color: $c-gray--75;
-      }
 
       &:first-child {
         margin-left: 0;

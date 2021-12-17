@@ -3,8 +3,12 @@
   "context": {
     "primary_header": {
       "last_refresh": "12.11.2021 13:43:01",
-      "icon": {
-        "avatar": "XX"
+      "avatar": {
+        "image": {
+          "src": "/images/avatar-placeholder.svg",
+          "alt": "Avatar"
+        },
+        "modifiers": "inactive"
       }
     }
   }

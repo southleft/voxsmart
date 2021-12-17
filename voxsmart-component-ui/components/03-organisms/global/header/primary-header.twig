@@ -16,12 +16,6 @@
     <p>last refresh</p>
     <div>{{ primary_header.last_refresh|date('m.d.Y \a\t H:i:s', false) }}</div>
   </div>
-  {% include "@icon-user" with {
-    "icon": {
-      "avatar": primary_header.icon.avatar,
-      "modifiers": primary_header.icon.status,
-      "extra": bem(base_class, 'notifications')
-    }
-  } %}
+  {% include "@avatar" with primary_header %}
 </header>
 {% render "@primary-nav" %}

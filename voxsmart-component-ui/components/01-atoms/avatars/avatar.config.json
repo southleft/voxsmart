@@ -1,0 +1,38 @@
+{
+  "title": "Avatar",
+  "default": "default",
+  "context": {
+    "avatar": {
+      "image": {
+        "src": "/images/avatar-placeholder.svg",
+        "alt": "Avatar"
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "active",
+      "context": {
+        "avatar": {
+          "modifiers": "active"
+        }
+      }
+    },
+    {
+      "name": "inactive",
+      "context": {
+        "avatar": {
+          "modifiers": "inactive"
+        }
+      }
+    },
+    {
+      "name": "alt",
+      "context": {
+        "avatar": {
+          "modifiers": "alt"
+        }
+      }
+    }
+  ]
+}

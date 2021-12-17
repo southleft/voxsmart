@@ -107,7 +107,7 @@ $icon-xxlarge: 120px;
 $border--standard: 1px solid $c-border;
 $box-shadow: 4px 7px 14px rgba(black, 0.1);
 $box-shadow--small: 4px 4px 14px rgba(0, 0, 0, 0.1);
-$box-shadow--action: 0px -5px 10px rgba(15, 16, 22, 0.1);
+$box-shadow--action: 0px 5px 10px rgba(15, 16, 22, 0.15);
 
 /**
  * Button/Link Styles.
@@ -185,7 +185,7 @@ $z-index-back-to-top: $z-index-100;
  * Font Sizes.
  */
 $font-size-body: var(--font-size-body, 14px);
-$font-size-xxs: var(--font-size-xs, 10px);
+$font-size-xxs: var(--font-size-xxs, 10px);
 $font-size-xs: var(--font-size-xs, 12px);
 $font-size-h6: var(--font-size-h6, 14px);
 $font-size-h5: var(--font-size-h5, 18px);

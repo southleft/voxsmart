@@ -14,7 +14,6 @@
         "button": {
           "icon_left": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-back"
             }
           }
@@ -27,7 +26,6 @@
         "button": {
           "icon_right": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-next"
             }
           }
@@ -40,13 +38,11 @@
         "button": {
           "icon_left": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-back"
             }
           },
           "icon_right": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-next"
             }
           }
@@ -77,7 +73,6 @@
         "button": {
           "icon_left": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-back"
             }
           },
@@ -91,7 +86,6 @@
         "button": {
           "icon_right": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-next"
             }
           },
@@ -105,13 +99,11 @@
         "button": {
           "icon_left": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-back"
             }
           },
           "icon_right": {
             "icon": {
-              "title": "icon",
               "name": "icon-arrows-line-next"
             }
           },

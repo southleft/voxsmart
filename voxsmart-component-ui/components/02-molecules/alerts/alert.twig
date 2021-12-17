@@ -1,0 +1,51 @@
+{% set base_class = alert.base_class|default('c-alert') %}
+<div class="{{ bem(base_class, alert.element, alert.modifiers, alert.extra) }}">
+  {% include "@checkbox" with {
+    "checkbox": {
+      "name": "checkbox",
+      "label": "checkbox",
+      "label_hidden": true
+    }
+  } %}
+  <div class="{{ bem(base_class, 'container') }}">
+    <div class="{{ bem(base_class, 'header') }}">
+      {% include "@icon" with {
+        "icon": {
+          "name": "icon-source-" ~ alert.type,
+          "modifiers": "small",
+          "extra": bem(base_class, 'type')
+        }
+      } %}
+      <div class="{{ bem(base_class, 'party') }}">
+      </div>
+      <div class="{{ bem(base_class, 'empolyees') }}">
+      </div>
+      <div class="{{ bem(base_class, 'date') }}">
+      </div>
+      <div class="{{ bem(base_class, 'assigned') }}">
+      </div>
+    </div>
+    <div class="{{ bem(base_class, 'details') }}">
+    </div>
+    <div class="{{ bem(base_class, 'footer') }}">
+      <div class="{{ bem(base_class, 'triggers') }}">
+      </div>
+      <div class="{{ bem(base_class, 'risk-status') }}">
+        {% include "@tag" with {
+          "tag": {
+            "text": alert.risk|capitalize,
+            "modifiers": ["risk", alert.risk|replace({' ': '-'})|lower],
+            "extra": bem(base_class, 'risk')
+          }
+        } %}
+        {% include "@icon" with {
+          "icon": {
+            "name": "icon-status-alert-" ~ alert.status,
+            "modifiers": "small",
+            "extra": bem(base_class, 'status')
+          }
+        } %}
+      </div>
+    </div>
+  </div>
+</div>

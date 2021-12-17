@@ -1,0 +1,213 @@
+{
+  "title": "Pagination",
+  "default": "pagination initial",
+  "context": {
+    "pagination": {
+      "prev": false,
+      "next": true,
+      "pages": [
+        {
+          "url": "/",
+          "text": "1",
+          "modifiers": "current"
+        },
+        {
+          "url": "/",
+          "text": "2"
+        },
+        {
+          "url": "/",
+          "text": "3"
+        },
+        {
+          "url": "/",
+          "text": "4"
+        },
+        {
+          "url": "/",
+          "text": "5"
+        },
+        {
+          "url": "/",
+          "text": "...",
+          "modifiers": "ellipsis"
+        },
+        {
+          "url": "/",
+          "text": "102"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "name": "pagination lower",
+      "context": {
+        "pagination": {
+          "prev": true,
+          "next": true,
+          "pages": [
+            {
+              "url": "/",
+              "text": "1"
+            },
+            {
+              "url": "/",
+              "text": "2",
+              "modifiers": "current"
+            },
+            {
+              "url": "/",
+              "text": "3"
+            },
+            {
+              "url": "/",
+              "text": "4"
+            },
+            {
+              "url": "/",
+              "text": "5"
+            },
+            {
+              "url": "/",
+              "text": "...",
+              "modifiers": "ellipsis"
+            },
+            {
+              "url": "/",
+              "text": "102"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "pagination middle",
+      "context": {
+        "pagination": {
+          "prev": true,
+          "next": true,
+          "pages": [
+            {
+              "url": "/",
+              "text": "1"
+            },
+            {
+              "url": "/",
+              "text": "...",
+              "modifiers": "ellipsis"
+            },
+            {
+              "url": "/",
+              "text": "49"
+            },
+            {
+              "url": "/",
+              "text": "50",
+              "modifiers": "current"
+            },
+            {
+              "url": "/",
+              "text": "51"
+            },
+            {
+              "url": "/",
+              "text": "52"
+            },
+            {
+              "url": "/",
+              "text": "...",
+              "modifiers": "ellipsis"
+            },
+            {
+              "url": "/",
+              "text": "102"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "pagination higher",
+      "context": {
+        "pagination": {
+          "prev": true,
+          "next": true,
+          "pages": [
+            {
+              "url": "/",
+              "text": "1"
+            },
+            {
+              "url": "/",
+              "text": "...",
+              "modifiers": "ellipsis"
+            },
+            {
+              "url": "/",
+              "text": "98"
+            },
+            {
+              "url": "/",
+              "text": "99"
+            },
+            {
+              "url": "/",
+              "text": "100"
+            },
+            {
+              "url": "/",
+              "text": "101",
+              "modifiers": "current"
+            },
+            {
+              "url": "/",
+              "text": "102"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "pagination end",
+      "context": {
+        "pagination": {
+          "prev": true,
+          "next": false,
+          "pages": [
+            {
+              "url": "/",
+              "text": "1"
+            },
+            {
+              "url": "/",
+              "text": "...",
+              "modifiers": "ellipsis"
+            },
+            {
+              "url": "/",
+              "text": "98"
+            },
+            {
+              "url": "/",
+              "text": "99"
+            },
+            {
+              "url": "/",
+              "text": "100"
+            },
+            {
+              "url": "/",
+              "text": "101"
+            },
+            {
+              "url": "/",
+              "text": "102",
+              "modifiers": "current"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

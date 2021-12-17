@@ -2,7 +2,7 @@
 {% if textarea.name %}
   <div class="{{ bem(base_class, textarea.element, textarea.modifiers, textarea.extra) }} o-form__item">
     {% if textarea.label %}
-      <label for="{{ textarea.name }}">{{ textarea.label }}</label>
+      <label for="{{ textarea.name }}"{{ textarea.label_hidden ? ' class="is-vishidden"' }}>{{ textarea.label }}</label>
     {% endif %}
     <textarea id="{{ textarea.name }}" name="{{ textarea.name }}" rows="{{ textarea.rows }}" cols="{{ textarea.cols }}" {{ attributes(textarea.attributes) }}></textarea>
   </div>

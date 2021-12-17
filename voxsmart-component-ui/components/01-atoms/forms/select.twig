@@ -2,7 +2,7 @@
 {% if select.options %}
   <div class="{{ bem(base_class, select.element, select.modifiers, select.extra) }} o-form__item has-focus-effect">
     {% if select.label %}
-      <label for="{{ select.name }}">{{ select.label }}</label>
+      <label for="{{ select.name }}"{{ select.label_hidden ? ' class="is-vishidden"' }}>{{ select.label }}</label>
     {% endif %}
     <select id="{{ select.name }}" class="js-select-focus" name="{{ select.name }}" {{ attributes(select.attributes) }}>
       {% for option in select.options %}

@@ -1,0 +1,47 @@
+{% set base_class = pagination.base_class|default('c-pagination') %}
+
+{% if pagination %}
+  <div class="{{ bem(base_class, pagination.element, pagination.modifiers, pagination.extra) }}">
+    {% if pagination.prev %}
+      {% include "@button" with {
+        "button": {
+          "icon_left": {
+            "icon": {
+              "name": "icon-arrows-carrot-back"
+            }
+          },
+          "extra": bem(base_class, 'arrow', 'prev'),
+          "attributes": {
+            "aria-label": "Previous"
+          }
+        }
+      } %}
+    {% endif %}
+    {% if pagination.pages %}
+      {% for page in pagination.pages %}
+        {% include "@button" with {
+          "button": {
+            "url": page.url,
+            "text": page.text,
+            "extra": bem(base_class, 'page', page.modifiers)
+          }
+        } %}
+      {% endfor %}
+    {% endif %}
+    {% if pagination.next %}
+      {% include "@button" with {
+        "button": {
+          "icon_left": {
+            "icon": {
+              "name": "icon-arrows-carrot-next"
+            }
+          },
+          "extra": bem(base_class, 'arrow', 'next'),
+          "attributes": {
+            "aria-label": "Next"
+          }
+        }
+      } %}
+    {% endif %}
+  </div>
+{% endif %}

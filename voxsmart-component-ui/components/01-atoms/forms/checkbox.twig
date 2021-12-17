@@ -2,6 +2,6 @@
 {% if checkbox.name and checkbox.label %}
   <div class="{{ bem(base_class, checkbox.element, checkbox.modifiers, checkbox.extra) }} o-form__item">
     <input id="{{ checkbox.name }}" name="{{ checkbox.name }}" type="checkbox"{% if checkbox.checked %} checked="checked"{% endif %} {{ attributes(checkbox.attributes) }}>
-    <label for="{{ checkbox.name }}">{{ checkbox.label }}</label>
+    <label for="{{ checkbox.name }}"{{ checkbox.label_hidden ? ' class="is-vishidden"' }}>{{ checkbox.label }}</label>
   </div>
 {% endif %}

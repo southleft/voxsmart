@@ -1,0 +1,101 @@
+.o-tag {
+  display: inline-flex;
+  font-size: $font-size-xxs;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid $c-gray--30;
+
+  &:not(.o-tag--score) {
+    padding: 2px $space-quarter;
+    border-radius: 2px;
+    color: $c-gray--dark;
+
+    &.o-tag--dark {
+      border: 1px solid #A5A8B4;
+      color: $c-white;
+    }
+  }
+
+  &--large {
+    font-size: $font-size-xs;
+  }
+
+  &--risk {
+    min-width: 18px;
+    text-transform: uppercase;
+
+    span {
+      display: none;
+
+      @include media('>medium') {
+        display: block;
+      }
+    }
+
+    &::before {
+      content: attr(data-letter);
+
+      @include media('>medium') {
+        display: none;
+      }
+    }
+  }
+
+  &--risk-score {
+    font-family: monospace;
+    font-size: $font-size-h5;
+    border: 0;
+  }
+
+  &--lowest {
+    border-color: #3AB668;
+    color: #008031;
+  }
+
+  &--low {
+    border-color: #9FAB1A;
+    color: #666100;
+  }
+
+  &--medium {
+    border-color: #F6A12B;
+    color: #AB6615;
+  }
+
+  &--high {
+    border-color: #E86127;
+    color: #C34109;
+  }
+
+  &--highest {
+    border-color: #D0150A;
+    color: #D0150A;
+  }
+
+  &--dark {
+    &.o-tag--lowest {
+      border-color: #70DB98;
+      color: #70DB98;
+    }
+
+    &.o-tag--low {
+      border-color: #C4E382;
+      color: #C4E382;
+    }
+
+    &.o-tag--medium {
+      border-color: #FFC575;
+      color: #FFC575;
+    }
+
+    &.o-tag--high {
+      border-color: #FE8A58;
+      color: #FE8A58;
+    }
+
+    &.o-tag--highest {
+      border-color: #FF5A50;
+      color: #FE8A58;
+    }
+  }
+}

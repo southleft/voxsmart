@@ -1,0 +1,6 @@
+{% set base_class = avatar.base_class|default('o-avatar') %}
+{% if avatar.image.src %}
+  <div class="{{ bem(base_class, avatar.element, avatar.modifiers, avatar.extra) }}">
+    <img src="{{ avatar.image.src|path }}" alt="{{ avatar.image.alt ? avatar.image.alt : "Avatar" }}" />
+  </div>
+{% endif %}

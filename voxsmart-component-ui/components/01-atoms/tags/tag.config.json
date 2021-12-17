@@ -1,0 +1,93 @@
+{
+  "title": "Tags",
+  "default": "lowest",
+  "context": {
+    "tag": {
+      "text": "Low",
+      "modifiers": ["risk", "lowest"]
+    }
+  },
+  "variants": [
+    {
+      "name": "low",
+      "context": {
+        "tag": {
+          "text": "Low",
+          "modifiers": ["risk", "low"]
+        }
+      }
+    },
+    {
+      "name": "med",
+      "context": {
+        "tag": {
+          "text": "Med",
+          "modifiers": ["risk", "medium"]
+        }
+      }
+    },
+    {
+      "name": "high",
+      "context": {
+        "tag": {
+          "text": "High",
+          "modifiers": ["risk", "high"]
+        }
+      }
+    },
+    {
+      "name": "highest",
+      "context": {
+        "tag": {
+          "text": "High",
+          "modifiers": ["risk", "highest"]
+        }
+      }
+    },
+    {
+      "name": "keyword small",
+      "context": {
+        "tag": {
+          "text": "Keyword",
+          "modifiers": "lowest"
+        }
+      }
+    },
+    {
+      "name": "keyword large",
+      "context": {
+        "tag": {
+          "text": "Keyword",
+          "modifiers": ["large", "lowest"]
+        }
+      }
+    },
+    {
+      "name": "keyword dark",
+      "context": {
+        "tag": {
+          "text": "Keyword",
+          "modifiers": ["dark", "lowest"]
+        }
+      }
+    },
+    {
+      "name": "risk score",
+      "context": {
+        "tag": {
+          "text": "0-19",
+          "modifiers": ["risk-score", "lowest"]
+        }
+      }
+    },
+    {
+      "name": "risk score dark",
+      "context": {
+        "tag": {
+          "text": "0-19",
+          "modifiers": ["risk-score", "lowest", "dark"]
+        }
+      }
+    }
+  ]
+}

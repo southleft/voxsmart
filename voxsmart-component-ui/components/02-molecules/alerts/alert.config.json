@@ -1,0 +1,26 @@
+{
+  "default": "alert unread",
+  "context": {
+    "alert": {
+      "type": "whatsapp",
+      "party": "Big Bank ABCD",
+      "employees": ["Maya Singleton"],
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque nullam non rhoncus a. Id purus enim tortor tellus",
+      "triggers": [],
+      "date": "",
+      "assigned": "",
+      "risk": "Low",
+      "status": 1
+    }
+  },
+  "variants": [
+    {
+      "name": "alert read",
+      "context": {
+        "alert": {
+          "modifiers": "read"
+        }
+      }
+    }
+  ]
+}

@@ -3,21 +3,30 @@
     "actions": {
       "users": [
         {
-          "icon": {
-            "avatar": "XX",
-            "modifiers": "active"
+          "avatar": {
+            "image": {
+              "src": "/images/avatar-placeholder.svg",
+              "alt": "Avatar"
+            },
+            "modifiers": ["alt", "active"]
           }
         },
         {
-          "icon": {
-            "avatar": "XX",
-            "modifiers": "active"
+          "avatar": {
+            "image": {
+              "src": "/images/avatar-placeholder.svg",
+              "alt": "Avatar"
+            },
+            "modifiers": ["alt", "active"]
           }
         },
         {
-          "icon": {
-            "avatar": "XX",
-            "modifiers": "inactive"
+          "avatar": {
+            "image": {
+              "src": "/images/avatar-placeholder.svg",
+              "alt": "Avatar"
+            },
+            "modifiers": ["alt", "inactive"]
           }
         }
       ]

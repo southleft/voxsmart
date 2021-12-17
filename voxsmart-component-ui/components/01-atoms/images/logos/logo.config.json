@@ -6,7 +6,6 @@
       "link": "/",
       "icon": {
         "name": "icon-logo-mark",
-        "title": "VoxSmart",
         "modifiers": "large",
         "extra": "u-path-fill--red"
       },

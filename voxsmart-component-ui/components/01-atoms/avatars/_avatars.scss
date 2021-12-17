@@ -1,0 +1,58 @@
+.o-avatar {
+  height: 34px;
+  width: 34px;
+  min-width: 34px;
+  border-radius: 5px;
+  background-color: $c-gray--light;
+  color: $c-gray--dark;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    background-color: $c-secondary;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    border: 2px solid $c-gray--dark;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+
+  &--alt {
+    background-color: $c-gray--15;
+    width: $icon-medium;
+    min-width: $icon-medium;
+    height: $icon-medium;
+
+    &::after {
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      border-color: $c-gray--75;
+      top: auto;
+      bottom: -2px;
+      right: -2px;
+    }
+  }
+
+  &--active::after {
+    background-color: $c-tertiary;
+  }
+
+  &--inactive::after {
+    background-color: $c-gray--45;
+  }
+}

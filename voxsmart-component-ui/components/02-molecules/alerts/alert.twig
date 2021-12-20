@@ -1,51 +1,104 @@
 {% set base_class = alert.base_class|default('c-alert') %}
-<div class="{{ bem(base_class, alert.element, alert.modifiers, alert.extra) }}">
-  {% include "@checkbox" with {
-    "checkbox": {
-      "name": "checkbox",
-      "label": "checkbox",
-      "label_hidden": true
-    }
-  } %}
-  <div class="{{ bem(base_class, 'container') }}">
-    <div class="{{ bem(base_class, 'header') }}">
-      {% include "@icon" with {
-        "icon": {
-          "name": "icon-source-" ~ alert.type,
-          "modifiers": "small",
-          "extra": bem(base_class, 'type')
-        }
-      } %}
-      <div class="{{ bem(base_class, 'party') }}">
-      </div>
-      <div class="{{ bem(base_class, 'empolyees') }}">
-      </div>
-      <div class="{{ bem(base_class, 'date') }}">
-      </div>
-      <div class="{{ bem(base_class, 'assigned') }}">
-      </div>
-    </div>
-    <div class="{{ bem(base_class, 'details') }}">
-    </div>
-    <div class="{{ bem(base_class, 'footer') }}">
-      <div class="{{ bem(base_class, 'triggers') }}">
-      </div>
-      <div class="{{ bem(base_class, 'risk-status') }}">
-        {% include "@tag" with {
-          "tag": {
-            "text": alert.risk|capitalize,
-            "modifiers": ["risk", alert.risk|replace({' ': '-'})|lower],
-            "extra": bem(base_class, 'risk')
-          }
-        } %}
+{% if alert %}
+  <div class="{{ bem(base_class, alert.element, alert.modifiers, alert.extra) }}">
+    {% include "@checkbox" with {
+      "checkbox": {
+        "name": "checkbox",
+        "label": "checkbox",
+        "label_hidden": true,
+        "extra": bem(base_class, 'checkbox')
+      }
+    } %}
+    <div class="{{ bem(base_class, 'container') }}">
+      {% if alert.type %}
         {% include "@icon" with {
           "icon": {
-            "name": "icon-status-alert-" ~ alert.status,
-            "modifiers": "small",
-            "extra": bem(base_class, 'status')
+            "name": "icon-source-" ~ alert.type,
+            "extra": bem(base_class, 'type')
           }
         } %}
-      </div>
+      {% endif %}
+      {% if alert.party %}
+        <div class="{{ bem(base_class, 'party') }} u-hide-until--m">
+          <strong>{{ alert.party }}</strong>
+        </div>
+      {% endif %}
+      {% if alert.employees %}
+        <div class="{{ bem(base_class, 'employees') }}">
+          <strong class="{{ bem(base_class, 'employees-name') }}">{{ alert.employees.0.name }}</strong>
+          {% if alert.employees|length > 1 %}
+            {% include "@tag" with {
+              "tag": {
+                "text": "+" ~ (alert.employees|length - 1),
+                "extra": bem(base_class, 'employees-more')
+              }
+            } %}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if alert.details %}
+        <div class="{{ bem(base_class, 'details') }}">
+          <span>{{ alert.details }}</span>
+        </div>
+      {% endif %}
+      {% if alert.keywords %}
+        <div class="{{ bem(base_class, 'keywords') }}">
+          {% for keyword in alert.keywords %}
+            {% include "@tag" with {
+              "tag": {
+                "text": keyword.text,
+                "modifiers": keyword.modifiers,
+                "extra": bem(base_class, 'keywords-tag')
+              }
+            } %}
+          {% endfor %}
+          {% if alert.keywords|length > 2 %}
+            {% include "@tag" with {
+              "tag": {
+                "text": "+" ~ (alert.keywords|length - 2),
+                "extra": [bem(base_class, 'keywords-moblile'), 'u-hide-after--m']
+              }
+            } %}
+          {% endif %}
+          {% include "@tag" with {
+            "tag": {
+              "text": alert.keywords|length,
+              "modifiers": alert.keywords.0.modifiers,
+              "extra": [bem(base_class, 'keywords-tablet'), 'u-hide-until--m', 'u-hide-after--l']
+            }
+          } %}
+        </div>
+      {% endif %}
+      {% if alert.date %}
+        <div class="{{ bem(base_class, 'date') }}">
+          <strong>{{ alert.date|date('m.d.Y', false) }}</strong>
+          <span>{{ alert.date|date('H:i:s', false) }}</span>
+        </div>
+      {% endif %}
+      {% if alert.assigned %}
+        <div class="{{ bem(base_class, 'assigned') }} u-hide-until--m">
+          {{ alert.assigned }}
+        </div>
+      {% endif %}
+      {% if alert.risk or alert.status %}
+        <div class="{{ bem(base_class, 'risk') }}">
+          {% include "@tag" with {
+            "tag": {
+              "text": alert.risk|capitalize,
+              "modifiers": ["risk", alert.risk|replace({' ': '-'})|lower],
+              "extra": bem(base_class, 'risk-tag')
+            }
+          } %}
+          {% if alert.status %}
+            {% include "@icon" with {
+              "icon": {
+                "name": "icon-status-alert-" ~ alert.status,
+                "extra": bem(base_class, 'risk-status')
+              }
+            } %}
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
-</div>
+{% endif %}

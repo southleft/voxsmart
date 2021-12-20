@@ -1,0 +1,226 @@
+.c-alert {
+  padding: $space-quarter $space-half $space-half $space-half;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  font-size: 9px;
+
+  @include media('>medium') {
+    padding: $space-half;
+    font-size: $font-size-xs;
+  }
+
+  &--unread {
+    background-color: $c-gray--light;
+  }
+
+  &__checkbox {
+    position: relative;
+    top: 3px;
+
+    @include media('>medium') {
+      top: 8px;
+    }
+
+    input[type=checkbox] {
+      width: 12px;
+      height: 12px;
+
+      @include media('>medium') {
+        width: 14px;
+        height: 14px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(22px, 1fr) );
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header1 header2"
+      "main main"
+      "footer1 footer2";
+    grid-row-gap: $space-half;
+
+    @include media('>medium') {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__type,
+  &__party,
+  &__employees,
+  &__details,
+  &__keywords,
+  &__date,
+  &__assigned,
+  &__risk,
+  &__risk-status {
+    @include media('>medium') {
+      margin-left: $space-half;
+      padding-left: $space-half;
+      border-left: 1px solid $c-border;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+  }
+
+  &__party {
+    strong {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+    }
+  }
+
+  &__type {
+    grid-area: header1;
+    justify-content: flex-start;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+
+      @include media('>medium') {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+      }
+    }
+  }
+
+  &__employees {
+    grid-area: header1;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 11px;
+
+    @include media('<=medium') {
+      margin-left: calc(#{$space-half} + 15px);
+      padding-left: $space-half;
+      border-left: 1px solid $c-border;
+    }
+
+    @include media('>medium') {
+      font-size: 12px;
+    }
+
+    strong {
+      white-space: nowrap;
+      margin-right: $space-quarter;
+
+      @include media('>medium') {
+        margin-right: $space-half;
+      }
+    }
+  }
+
+  &__details {
+    grid-area: main;
+
+    span {
+      overflow: hidden;
+
+      @include media('<=medium') {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      @include media('>medium') {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: auto;
+        margin-bottom: auto;
+        max-width: 160px;
+      }
+
+      @include media('>large') {
+        max-width: 200px;
+      }
+    }
+  }
+
+  &__date {
+    grid-area: header2;
+    display: flex;
+    justify-content: flex-end;
+
+    @include media('>medium') {
+      justify-content: flex-start;
+    }
+
+    span {
+      margin-left: $space-quarter;
+
+      @include media('>medium', '<=large') {
+        display: none;
+      }
+    }
+  }
+
+  &__keywords {
+    grid-area: footer1;
+    display: flex;
+    flex-wrap: nowrap;
+
+    &-tag {
+      white-space: nowrap;
+      margin-right: $space-quarter;
+
+      @include media('<=medium') {
+        &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+          display: none;
+        }
+      }
+
+      @include media('>medium') {
+        display: none;
+      }
+
+      @include media('>large') {
+        &:first-of-type {
+          display: inline-block;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__risk {
+    grid-area: footer2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include media('>medium') {
+      justify-content: flex-start;
+    }
+
+    &-status {
+      margin-left: $space-half;
+
+      svg {
+        width: 17px;
+        height: 17px;
+        min-width: 17px;
+
+        @include media('>medium') {
+          width: 24px;
+          height: 24px;
+          min-width: 24px;
+        }
+      }
+    }
+  }
+}

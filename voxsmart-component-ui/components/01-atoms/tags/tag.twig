@@ -1,6 +1,6 @@
 {% set base_class = tag.base_class|default('o-tag') %}
 {% if tag.text %}
-  <div class="{{ bem(base_class, tag.element, tag.modifiers, tag.extra) }}" data-letter="{{ tag.text|first }}">
+  <div class="{{ bem(base_class, tag.element, tag.modifiers, tag.extra) }}"{{ loop.index ? ' data-index="' ~ loop.index ~ '"' }}{{ 'risk' in tag.modifiers and tag.text|first != '+' ? ' data-letter="' ~ tag.text|first ~ '"' }}>
     <span>{{ tag.text }}</span>
   </div>
 {% endif %}

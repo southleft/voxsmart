@@ -1,24 +1,43 @@
 {
-  "default": "alert unread",
+  "default": "alert read",
   "context": {
     "alert": {
       "type": "whatsapp",
-      "party": "Big Bank ABCD",
-      "employees": ["Maya Singleton"],
+      "party": "Big Bank ABCDEFG",
+      "employees": [
+        {
+          "name": "Maya Singleton"
+        },
+        {
+          "name": "Lydell Svenson"
+        }
+      ],
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque nullam non rhoncus a. Id purus enim tortor tellus",
-      "triggers": [],
-      "date": "",
-      "assigned": "",
+      "keywords": [
+        {
+          "text": "Price Positioning",
+          "modifiers": "high"
+        },
+        {
+          "text": "Sidebar",
+          "modifiers": "medium"
+        },
+        {
+          "text": "Downplay"
+        }
+      ],
+      "date": "10.10.2021 11:12:34",
+      "assigned": "Miles Elliotworth",
       "risk": "Low",
       "status": 1
     }
   },
   "variants": [
     {
-      "name": "alert read",
+      "name": "alert unread",
       "context": {
         "alert": {
-          "modifiers": "read"
+          "modifiers": "unread"
         }
       }
     }

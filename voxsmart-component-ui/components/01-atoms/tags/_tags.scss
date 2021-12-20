@@ -27,7 +27,7 @@
     span {
       display: none;
 
-      @include media('>medium') {
+      @include media('>large') {
         display: block;
       }
     }
@@ -35,7 +35,7 @@
     &::before {
       content: attr(data-letter);
 
-      @include media('>medium') {
+      @include media('>large') {
         display: none;
       }
     }

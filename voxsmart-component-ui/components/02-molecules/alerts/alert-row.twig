@@ -1,0 +1,104 @@
+{% set base_class = alert_row.base_class|default('c-alert') %}
+{% if alert_row %}
+  <tr class="{{ bem(base_class, alert_row.element, 'row', alert_row.extra) }}">
+    <td class="{{ bem(base_class, 'checkbox') }}">
+      {% include "@checkbox" with {
+        "checkbox": {
+          "name": "checkbox",
+          "label": "checkbox",
+          "label_hidden": true
+        }
+      } %}
+    </td>
+    {% if alert_row.type %}
+      <td class="{{ bem(base_class, 'type') }}">
+        {% include "@icon" with {
+          "icon": {
+            "name": "icon-source-" ~ alert_row.type
+          }
+        } %}
+      </td>
+    {% endif %}
+    {% if alert_row.party %}
+      <td class="{{ bem(base_class, 'party') }} u-hide-until--m">
+        <strong>{{ alert_row.party }}</strong>
+      </td>
+    {% endif %}
+    {% if alert_row.employees %}
+      <td class="{{ bem(base_class, 'employees') }}">
+        <strong class="{{ bem(base_class, 'employees-name') }}">{{ alert_row.employees.0.name }}</strong>
+        {% if alert_row.employees|length > 1 %}
+          {% include "@tag" with {
+            "tag": {
+              "text": "+" ~ (alert_row.employees|length - 1),
+              "extra": bem(base_class, 'employees-more')
+            }
+          } %}
+        {% endif %}
+      </td>
+    {% endif %}
+    {% if alert_row.details %}
+      <td class="{{ bem(base_class, 'details') }}">
+        <span>{{ alert_row.details }}</span>
+      </td>
+    {% endif %}
+    {% if alert_row.keywords %}
+      <td class="{{ bem(base_class, 'keywords') }}">
+        {% for keyword in alert_row.keywords %}
+          {% include "@tag" with {
+            "tag": {
+              "text": keyword.text,
+              "modifiers": keyword.modifiers,
+              "extra": bem(base_class, 'keywords-tag')
+            }
+          } %}
+        {% endfor %}
+        {% if alert_row.keywords|length > 2 %}
+          {% include "@tag" with {
+            "tag": {
+              "text": "+" ~ (alert_row.keywords|length - 2),
+              "extra": [bem(base_class, 'keywords-moblile'), 'u-hide-after--m']
+            }
+          } %}
+        {% endif %}
+        {% include "@tag" with {
+          "tag": {
+            "text": alert_row.keywords|length,
+            "modifiers": alert_row.keywords.0.modifiers,
+            "extra": [bem(base_class, 'keywords-tablet'), 'u-hide-until--m', 'u-hide-after--l']
+          }
+        } %}
+      </td>
+    {% endif %}
+    {% if alert_row.date %}
+      <td class="{{ bem(base_class, 'date') }}">
+        <strong>{{ alert_row.date|date('m.d.Y', false) }}</strong>
+        <span>{{ alert_row.date|date('H:i:s', false) }}</span>
+      </td>
+    {% endif %}
+    {% if alert_row.assigned %}
+      <td class="{{ bem(base_class, 'assigned') }} u-hide-until--m">
+        {{ alert_row.assigned }}
+      </td>
+    {% endif %}
+    {% if alert_row.risk %}
+      <td class="{{ bem(base_class, 'risk-tag') }}">
+        {% include "@tag" with {
+          "tag": {
+            "text": alert_row.risk|capitalize,
+            "modifiers": ["risk", alert_row.risk|replace({' ': '-'})|lower]
+          }
+        } %}
+      </td>
+    {% endif %}
+    {% if alert_row.status %}
+      <td class="{{ bem(base_class, 'risk-status') }}">
+        {% include "@icon" with {
+          "icon": {
+            "name": "icon-status-alert-" ~ alert_row.status
+          }
+        } %}
+      </td>
+    {% endif %}
+  </tr>
+{% endif %}

@@ -6,7 +6,7 @@
   padding-top: $space;
   padding-bottom: $space;
 
-  @include media('>medium') {
+  @include media('>large') {
     padding-top: $space-quarter;
     padding-bottom: $space-quarter;
   }
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
 
-    @include media('>medium') {
+    @include media('>large') {
       display: flex;
     }
   }
@@ -37,7 +37,7 @@
   &__nav {
     display: none;
 
-    @include media('>medium') {
+    @include media('>large') {
       display: inline-flex;
       margin-left: $space;
     }
@@ -47,7 +47,7 @@
     @include o-link($c-gray--15, $c-white);
     margin-bottom: $space-quarter;
 
-    @include media('>medium') {
+    @include media('>large') {
       margin-bottom: 0;
       margin-left: $space;
       margin-right: $space-half;

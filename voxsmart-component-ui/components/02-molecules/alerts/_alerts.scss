@@ -14,19 +14,32 @@
     background-color: $c-gray--light;
   }
 
-  &__checkbox {
-    position: relative;
-    top: 3px;
-
-    @include media('>medium') {
-      top: 8px;
+  &--row {
+    td {
+      padding: $space-quarter $space-half;
+      margin: 0;
+      border-left: 1px solid $c-border;
+      min-height: inherit;
     }
 
+    .c-alert__checkbox {
+      border-left: 0;
+
+      input[type=checkbox] {
+        top: 5px;
+      }
+    }
+  }
+
+  &__checkbox {
     input[type=checkbox] {
       width: 12px;
       height: 12px;
+      position: relative;
+      top: 3px;
 
       @include media('>medium') {
+        top: 8px;
         width: 14px;
         height: 14px;
         margin-right: 0;

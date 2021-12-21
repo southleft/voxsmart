@@ -1,0 +1,23 @@
+{% set base_class = alert_table.base_class|default('c-alert-table') %}
+{% if alert_table %}
+  <table class="{{ bem(base_class, alert_table.element, alert_table.modifiers, alert_table.extra) }}">
+    {% if alert_table.heading.rows %}
+      <thead>
+        {% for row in alert_table.heading.rows %}
+          <tr>
+            {% for cell in row.cells %}
+              <th class="{{ bem(base_class, 'heading-cell', cell.modifiers, cell.extra) }}" {% if cell.colspan %}colspan="{{ cell.colspan }}"{% endif %}>{{ cell.text }}</th>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </thead>
+    {% endif %}
+    {% if alert_table.body %}
+      <tbody>
+        {% for alert_row in alert_table.body.rows %}
+          {% include "@alert-row" with alert_row %}
+        {% endfor %}
+      </tbody>
+    {% endif %}
+  </table>
+{% endif %}

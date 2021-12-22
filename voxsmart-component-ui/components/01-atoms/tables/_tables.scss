@@ -8,10 +8,14 @@ table {
 th {
   text-align: left;
   border: 1px solid transparent;
-  padding: ($space / 2) 0;
+  padding: $space-half;
   text-transform: uppercase;
   vertical-align: top;
-  font-weight: bold;
+  font-size: $font-size-xxs;
+  font-weight: 400;
+  line-height: 15px;
+  background-color: $c-gray--15;
+  color: $c-gray--60;
 }
 
 tr {
@@ -20,5 +24,5 @@ tr {
 
 td {
   border: 1px solid transparent;
-  padding: $space / 2;
+  padding: $space-half;
 }

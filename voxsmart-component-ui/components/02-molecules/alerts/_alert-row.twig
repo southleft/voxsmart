@@ -1,4 +1,5 @@
 {% set base_class = alert_row.base_class|default('c-alert') %}
+{% set alert_row = row %}
 {% if alert_row %}
   <tr class="{{ bem(base_class, alert_row.element, 'row', alert_row.extra) }}">
     <td class="{{ bem(base_class, 'checkbox') }}">
@@ -44,7 +45,7 @@
     {% endif %}
     {% if alert_row.keywords %}
       <td class="{{ bem(base_class, 'keywords') }}">
-        {% for keyword in alert_row.keywords %}
+        {% for keyword in alert_row.keywords|slice(0,1) %}
           {% include "@tag" with {
             "tag": {
               "text": keyword.text,
@@ -57,17 +58,10 @@
           {% include "@tag" with {
             "tag": {
               "text": "+" ~ (alert_row.keywords|length - 2),
-              "extra": [bem(base_class, 'keywords-moblile'), 'u-hide-after--m']
+              "extra": bem(base_class, 'keywords-moblile')
             }
           } %}
         {% endif %}
-        {% include "@tag" with {
-          "tag": {
-            "text": alert_row.keywords|length,
-            "modifiers": alert_row.keywords.0.modifiers,
-            "extra": [bem(base_class, 'keywords-tablet'), 'u-hide-until--m', 'u-hide-after--l']
-          }
-        } %}
       </td>
     {% endif %}
     {% if alert_row.date %}

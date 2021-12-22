@@ -4,6 +4,7 @@
   flex-wrap: nowrap;
   flex-direction: row;
   font-size: 9px;
+  background: $c-white;
 
   @include media('>medium') {
     padding: $space-half;
@@ -11,24 +12,7 @@
   }
 
   &--unread {
-    background-color: $c-gray--light;
-  }
-
-  &--row {
-    td {
-      padding: $space-quarter $space-half;
-      margin: 0;
-      border-left: 1px solid $c-border;
-      min-height: inherit;
-    }
-
-    .c-alert__checkbox {
-      border-left: 0;
-
-      input[type=checkbox] {
-        top: 5px;
-      }
-    }
+    background: $c-gray--light;
   }
 
   &__checkbox {
@@ -40,8 +24,8 @@
 
       @include media('>medium') {
         top: 8px;
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
         margin-right: 0;
       }
     }
@@ -234,6 +218,120 @@
           min-width: 24px;
         }
       }
+    }
+  }
+}
+
+.c-alert-table {
+  overflow: scroll;
+
+  table {
+    border-collapse: inherit;
+    border: 0;
+    overflow-x: scroll;
+  }
+
+  th {
+    position: relative;
+    white-space: nowrap;
+
+    &:not(:first-of-type) {
+      padding-right: $space;
+    }
+
+    .o-icon {
+      display: inline-flex;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0 auto 3px;
+
+      svg path {
+        fill: $c-gray--60;
+      }
+    }
+
+    .o-checkbox {
+      padding: 0 $space-half;
+
+      input {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .c-alert {
+    display: table-row;
+
+    td {
+      border: 1px solid transparent;
+      padding: $space-half;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      white-space: nowrap;
+
+      &:first-of-type::before {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 30px;
+        background-color: $c-border;
+        position: absolute;
+        left: -1px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+
+    &__checkbox {
+      border-left: 0;
+
+      input[type=checkbox] {
+        top: 0;
+      }
+    }
+
+    &__checkbox,
+    &__type,
+    &__risk-status {
+      > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__keywords {
+      &-tag {
+        &:first-of-type {
+          display: inline-block;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__checkbox {
+      input[type=checkbox] {
+        width: 15px;
+        height: 15px;
+        margin-right: 0;
+      }
+    }
+
+    &__details {
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 160px;
     }
   }
 }

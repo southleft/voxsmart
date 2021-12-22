@@ -1,17 +1,16 @@
 .c-primary-nav {
   background-color: $c-gray--dark;
   height: calc(100vh - #{$primary-header-height});
-  width: 60px;
+  width: $primary-nav-width;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: $space-half 0;
   transition: $transition-all;
-  position: sticky;
+  position: fixed;
   left: 0;
   top: $primary-header-height;
   z-index: 2;
-  float: left;
 
   &.is-active {
     width: 220px;
@@ -88,7 +87,7 @@
   }
 
   + .l-main {
-    padding-left: 60px;
+    padding-left: $primary-nav-width;
   }
 }
 

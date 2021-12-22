@@ -8,52 +8,195 @@
             "cells": [
               {
                 "text": "",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "checkbox",
+                  "data": {
+                    "checkbox": {
+                      "name": "select-all",
+                      "label": "Select All",
+                      "label_hidden": true
+                    }
+                  }
+                }
               },
               {
                 "text": "Type",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Party",
                 "extra": "u-hide-until--m",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Employees",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Details",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Keywords",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Date/Time EST",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Assigned",
                 "extra": "u-hide-until--m",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Risk",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               },
               {
                 "text": "Status",
-                "colspan": 1
+                "colspan": 1,
+                "include": {
+                  "name": "icon",
+                  "data": {
+                    "icon": {
+                      "name": "icon-arrows-filled-down"
+                    }
+                  }
+                }
               }
             ]
           }
         ]
       },
       "body": {
+        "include": "alert-row",
         "rows": [
+          {
+            "type": "whatsapp",
+            "party": "Big Bank ABCDEFG",
+            "employees": [
+              {
+                "name": "Maya Singleton"
+              },
+              {
+                "name": "Lydell Svenson"
+              }
+            ],
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque nullam non rhoncus a. Id purus enim tortor tellus",
+            "keywords": [
+              {
+                "text": "Price Positioning",
+                "modifiers": "high"
+              },
+              {
+                "text": "Sidebar",
+                "modifiers": "medium"
+              },
+              {
+                "text": "Downplay"
+              }
+            ],
+            "date": "10.10.2021 11:12:34",
+            "assigned": "Miles Elliotworth",
+            "risk": "Low",
+            "status": 1
+          },
+          {
+            "type": "whatsapp",
+            "party": "Big Bank ABCDEFG",
+            "employees": [
+              {
+                "name": "Maya Singleton"
+              },
+              {
+                "name": "Lydell Svenson"
+              }
+            ],
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque nullam non rhoncus a. Id purus enim tortor tellus",
+            "keywords": [
+              {
+                "text": "Price Positioning",
+                "modifiers": "high"
+              },
+              {
+                "text": "Sidebar",
+                "modifiers": "medium"
+              },
+              {
+                "text": "Downplay"
+              }
+            ],
+            "date": "10.10.2021 11:12:34",
+            "assigned": "Miles Elliotworth",
+            "risk": "Low",
+            "status": 1
+          },
           {
             "type": "whatsapp",
             "party": "Big Bank ABCDEFG",

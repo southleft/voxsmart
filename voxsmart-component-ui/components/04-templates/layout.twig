@@ -1,8 +1,12 @@
 {% set base_class = layout.base_class|default('l-main') %}
 {% render "@primary-header" %}
-<main role="document" class="{{ bem(base_class, layout.element, layout.modifiers, layout.extra) }} l-wrap">
-  <article class="{{ bem(base_class, 'container') }} l-container u-spacing--triple">
-    {% block content %}{% endblock %}
-  </article>
+<main role="document" class="{{ bem(base_class, layout.element, layout.modifiers, layout.extra) }}">
+  {% block sections_before %}{% endblock %}
+  <div class="{{ bem(base_class, 'wrap') }} l-wrap">
+    <article class="{{ bem(base_class, 'container') }} l-container u-spacing--triple">
+      {% block content %}{% endblock %}
+    </article>
+  </div>
+  {% block sections_after %}{% endblock %}
 </main>
 {% render "@footer" %}

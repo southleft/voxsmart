@@ -1,6 +1,6 @@
 {% set base_class = footer.base_class|default('c-footer') %}
 <footer class="{{ bem(base_class, footer.element, footer.modifiers, footer.extra) }} l-wrap" role="contentinfo">
-  <div class="{{ bem(base_class, 'container') }} l-container" data-bp="grid 6@md">
+  <div class="{{ bem(base_class, 'container') }} l-container" data-bp="grid 6@lg">
     <div class="{{ bem(base_class, 'content', 'left') }}">
       {% render "@logo" with {
         "logo": {

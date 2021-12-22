@@ -219,6 +219,63 @@ select {
   }
 }
 
+.select2 {
+  display: block;
+  position: relative;
+  padding: 0;
+
+  &.js-smart-search {
+    .select2-selection {
+      padding: 0;
+    }
+  }
+
+  &-selection {
+    @extend select;
+    display: block;
+  }
+
+  &-dropdown {
+    @include o-input;
+    position: absolute;
+    width: 100%;
+    display: block;
+    padding: 0;
+  }
+
+  &-results__options {
+    display: block;
+    list-style: none;
+    max-height: 200px;
+    overflow: auto;
+  }
+
+  &-results__option {
+    display: block;
+    list-style: none;
+    padding: $space-half $space;
+    transition: $transition-all;
+    cursor: pointer;
+
+    &:hover,
+    &.is-active {
+      color: $c-white;
+      background: $c-black;
+    }
+
+    &:not(:first-of-type) {
+      border-top: 1px solid $c-gray--15;
+    }
+  }
+
+  &-selection__rendered {
+    input {
+      border: none;
+      background: transparent;
+    }
+  }
+}
+
 .o-form--inline {
   .o-fieldset {
     display: flex;

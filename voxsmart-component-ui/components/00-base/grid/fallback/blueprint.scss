@@ -4,13 +4,15 @@
     License MIT 2019
 */
 
+@use "sass:math";
+
 @import './../_config';
 
 @mixin column-generator($suffix) {
   @for $i from 1 through $cols {
     [#{$prefix}='grid'] > [#{$prefix}~='#{$i}\@#{$suffix}'],
     [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@#{$suffix}'] > * {
-      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+      width: calc(#{percentage(math.div($i, $cols))} - #{$gutter * 0.5}) !important;
     }
   }
 }
@@ -30,7 +32,7 @@
   [#{$prefix}*='grid'] > * {
     display: block !important;
     float: left !important;
-    margin: 0 #{$gutter / 2} #{$gutter / 2} 0;
+    margin: 0 #{$gutter * 0.5} #{$gutter * 0.5} 0;
 
     &:last-child {
       margin-right: 0;
@@ -40,7 +42,7 @@
   @for $i from 1 through $cols {
     [#{$prefix}='grid'] > [#{$prefix}~='#{$i}'],
     [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] > * {
-      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+      width: calc(#{percentage(math.div($i, $cols))} - #{$gutter * 0.5}) !important;
     }
   }
 

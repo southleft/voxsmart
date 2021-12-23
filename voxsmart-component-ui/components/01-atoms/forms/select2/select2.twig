@@ -1,0 +1,40 @@
+{% set base_class = base_class|default('o-select2') %}
+{% if select.options %}
+  <div class="{{ bem(base_class, select.element, select.modifiers, select.extra) }} o-form__item has-focus-effect">
+    {% if select.label %}
+      <label for="{{ select.name }}"{{ select.label_hidden ? ' class="is-vishidden"' }}>{{ select.label }}</label>
+    {% endif %}
+    <select id="{{ select.name }}" name="{{ select.name }}" class="is-vishidden js-select2" {{ attributes(select.attributes) }}>
+      {% for option in select.options %}
+        <option value="{{ option.value|lower|replace({' ':'-'}) }}" {{ attributes(option.attributes)}}>{{ option.text }}</option>
+      {% endfor %}
+    </select>
+    <span class="{{ bem(base_class) }} select2 select2-container js-select2{% if select.search %} js-smart-search{% endif %}">
+      <span class="select2-selection">
+        {% if select.search %}
+          <span class="select2-search">
+            {% include "@input" with {
+            "input": {
+              "name": 'name',
+              "label": 'Label',
+              "type": 'text',
+              "extra": 'select2-selection__rendered'
+            }
+          } %}
+          </span>
+        {% else %}
+          <span class="select2-selection__rendered" role="textbox" aria-readonly="true" title="{{ select.label|lower|replace({' ':'-'}) }}">{{ select.label }}</span>
+        {% endif %}
+      </span>
+      <span class="select2-dropdown is-vishidden">        
+        <span class="select2-results">
+          <ul class="select2-results__options">
+            {% for option in select.options %}
+              <li data-value="{{ option.value|lower|replace({' ':'-'}) }}" class="select2-results__option" aria-controls="{{ select.name }}" {{ attributes(option.attributes)}}>{{ option.text }}</li>
+            {% endfor %}
+          </span>
+        </span>
+      </span>
+    </span>
+  </div>
+{% endif %}

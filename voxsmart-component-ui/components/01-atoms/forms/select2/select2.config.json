@@ -1,0 +1,90 @@
+{
+  "title": "Inputs",
+  "default": "select2",
+  "context": {
+    "select": {
+      "name": "select2",
+      "label": "Label",
+      "options": [
+        {
+          "text": "Option 1",
+          "value": "option-1"
+        },
+        {
+          "text": "Option 2",
+          "value": "option-2"
+        },
+        {
+          "text": "Option 3",
+          "value": "option-3"
+        },
+        {
+          "text": "Option 4",
+          "value": "option-4"
+        },
+        {
+          "text": "Option 5",
+          "value": "option-5"
+        },
+        {
+          "text": "Option 6",
+          "value": "option-6"
+        },
+        {
+          "text": "Option 7",
+          "value": "option-7"
+        },
+        {
+          "text": "Option 8",
+          "value": "option-8"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "name": "select2 with search",
+      "context": {
+        "select": {
+          "name": "select2",
+          "label": "Label",
+          "search": "true",
+          "options": [
+            {
+              "text": "Option 1",
+              "value": "option-1"
+            },
+            {
+              "text": "Option 2",
+              "value": "option-2"
+            },
+            {
+              "text": "Option 3",
+              "value": "option-3"
+            },
+            {
+              "text": "Option 4",
+              "value": "option-4"
+            },
+            {
+              "text": "Option 5",
+              "value": "option-5"
+            },
+            {
+              "text": "Option 6",
+              "value": "option-6"
+            },
+            {
+              "text": "Option 7",
+              "value": "option-7"
+            },
+            {
+              "text": "Option 8",
+              "value": "option-8"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

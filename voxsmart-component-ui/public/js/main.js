@@ -54,6 +54,70 @@ if (document.querySelector('.js-select-focus')) {
 }
 
 /**
+* Form - Select2 Change Value
+*/
+var Select2Update = function() {
+  // click event for smart search dropdown item
+  document.addEventListener('click', function (event) {
+    if (!event.target.matches('.select2-selection input')) return;
+    var containerEl = getClosest(event.target, '.select2-container');
+    var dropdownEl = containerEl.querySelector('.select2-dropdown');
+
+    // toggle the dropdown
+    if(dropdownEl.classList.contains('is-vishidden')) {
+      dropdownEl.classList.remove('is-vishidden');
+    } else {
+      dropdownEl.classList.add('is-vishidden');
+    }
+  }, false);
+
+  // click event for normal dropdown item
+  document.addEventListener('click', function (event) {
+    if (!event.target.matches('.select2-selection')) return;
+    var dropdownEl = event.target.nextElementSibling;
+
+    // toggle the dropdown
+    if(dropdownEl.classList.contains('is-vishidden')) {
+      dropdownEl.classList.remove('is-vishidden');
+    } else {
+      dropdownEl.classList.add('is-vishidden');
+    }
+  }, false);
+
+  document.addEventListener('click', function (event) {
+    if (!event.target.matches('.select2-results__option')) return;
+    var selectEl = document.getElementById(event.target.getAttribute('aria-controls'));
+    var containerEl = getClosest(event.target, '.select2-container');
+    var dropdownEl = getClosest(event.target, '.select2-dropdown');
+    var renderedSel = containerEl.querySelector('.select2-selection__rendered');
+
+    // Remove active class from any siblings
+    containerEl.querySelectorAll('.select2-results__option').forEach(function(el) {
+      el.classList.remove('is-active');
+    });
+
+    // Add active class to selected element
+    event.target.classList.add('is-active');
+
+    // update the displayed selection
+    if(containerEl.classList.contains('js-smart-search')) {
+      renderedSel.querySelector('input').value = event.target.textContent;
+    } else {
+      renderedSel.textContent = event.target.textContent;
+    }
+
+    // update the value of the (visually hidden) select element
+    selectEl.value = event.target.dataset.value;
+
+    // hide the dropdown
+    dropdownEl.classList.add('is-vishidden');
+  }, false);
+}
+if (document.querySelector('.js-select2')) {
+  Select2Update();
+}
+
+/**
 * Tabs
 */
 if (document.querySelector('.js-tab')) {
@@ -143,3 +207,27 @@ function setUtilities(parentEl) {
 }
 
 setUtilities(document);
+
+/**
+* Get Closest - helper function
+*/
+var getClosest = function (elem, selector) {
+  if (!Element.prototype.matches) {
+    Element.prototype.matches =
+    Element.prototype.matchesSelector ||
+    Element.prototype.mozMatchesSelector ||
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.oMatchesSelector ||
+    Element.prototype.webkitMatchesSelector ||
+    function(s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+        i = matches.length;
+      while (--i >= 0 && matches.item(i) !== this) {}
+      return i > -1;
+    };
+  }
+  for ( ; elem && elem !== document; elem = elem.parentNode ) {
+    if ( elem.matches( selector ) ) return elem;
+  }
+  return null;
+};

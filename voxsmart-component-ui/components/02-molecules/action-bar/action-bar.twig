@@ -1,0 +1,104 @@
+{% set base_class = actions.base_class|default('c-action-bar') %}
+<div class="{{ bem(base_class, actionbar.element, actionbar.modifiers, actionbar.extra) }}">
+  {% if actionbar.type == 'multi' %}
+    <div class="{{ bem(base_class, 'selection') }}">
+      <span class="{{ bem(base_class, 'selection-value') }}">{{ actionbar.selection.value }}</span>
+      <span class="{{ bem(base_class, 'selection-label') }}">{{ actionbar.selection.label }}</span>
+    </div>
+  {% elseif actionbar.type == 'single' %}
+    {% if actionbar.link %}
+      {% include "@link" with {
+        "link": {
+          "url": actionbar.link.url,
+          "text": actionbar.link.name,
+          "target": "_blank",
+          "extra": bem(base_class, 'item', link.name),
+          "icon_left": {
+            "icon": {
+              "name": "icon-download",
+              "modifiers": "small"
+            }
+          },
+          "attributes": {
+            "aria-label": actionbar.link.name|capitalize
+          }
+        }
+      } %}
+    {% endif %}
+  {% elseif actionbar.type == 'employee' %}
+    {% if actionbar.employee %}
+      <div class="{{ bem(base_class, 'employee') }}">
+        {% include "@avatar" with actionbar.employee %}
+        <div class="{{ bem(base_class, 'employee-info') }}">
+        {% if actionbar.employee.name %}
+          <span class="{{ bem(base_class, 'employee-name') }}">
+            {{ actionbar.employee.name }}
+          </span>
+        {% endif %}
+        {% if actionbar.employee.id %}
+          <span class="{{ bem(base_class, 'employee-id') }}">
+            ID: {{ actionbar.employee.id }}
+          </span>
+        {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+  <div class="{{ bem(base_class, 'action-items') }}">
+    {% if actionbar.type == 'multi' or actionbar.type == 'single' %}
+      {% include "@button" with {
+        "button": {
+          "icon_left": {
+            "icon" : {
+              "name": "icon-nav-case-add"
+            }
+          },
+          "attributes": {
+            "aria-label": "Add Case"
+          },
+          "extra": [bem(base_class, 'button', 'icon-only'), 'js-actions-add']
+        }
+      } %}
+    {% endif %}
+    {% if actionbar.status %}
+      <div class="{{ bem(base_class, 'status') }}">
+        <span>{{ actionbar.status.text }}</span>
+      </div>
+    {% endif %}
+    {% for item in actionbar.buttons %}
+      {% if item.icon_left %}
+        {% include "@button" with {
+        "button": {
+          "url": item.url,
+          "text": item.text,
+          "icon_left": {
+            "icon" : {
+              "name": item.icon
+            }
+          },
+          "attributes": {
+            "aria-label": item.text
+          },
+          "extra": [bem(base_class, 'button', '', 'o-button--' ~ item.modifier),]
+        }
+      } %}
+      {% else %}
+        {% include "@button" with {
+        "button": {
+          "url": item.url,
+          "text": item.text,
+          "icon_right": {
+            "icon" : {
+              "name": item.icon
+            }
+          },
+          "attributes": {
+            "aria-label": item.text
+          },
+          "extra": [bem(base_class, 'button'),]
+        }
+      } %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

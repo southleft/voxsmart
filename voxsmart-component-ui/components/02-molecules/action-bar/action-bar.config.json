@@ -1,0 +1,130 @@
+{
+  "title": "Action Bar",
+  "default": "Tier 1 - Multi - Default",
+  "context": {
+    "actionbar": {
+      "modifiers": "tier-1",
+      "type": "multi",
+      "selection": {
+        "value": "0",
+        "label": "Label"
+      },
+      "buttons": [
+        {
+          "text": "Label",
+          "icon": "icon-arrows-carrot-down",
+          "url": "#"
+        },
+        {
+          "text": "Label",
+          "icon": "icon-arrows-carrot-down",
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "name": "Tier 1 - Multi - Selected",
+      "context": {
+        "actionbar": {
+          "type": "multi",
+          "selection": {
+            "value": "3",
+            "label": "You Have 3 Alerts Selected"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tier 2 - Multi - Default",
+      "context": {
+        "actionbar": {
+          "type": "multi",
+          "modifiers": "tier-2",
+          "selection": {
+            "value": "0",
+            "label": "Label"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tier 2 - Multi - Selected",
+      "context": {
+        "actionbar": {
+          "type": "multi",
+          "modifiers": "tier-2",
+          "selection": {
+            "value": "3",
+            "label": "You Have 3 Alerts Selected"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tier 1 - Single - Default",
+      "context": {
+        "actionbar": {
+          "type": "single",
+          "link": {
+            "name": "Export &amp; Download",
+            "url": "#"
+          },
+          "status": {
+            "text": "Status"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tier 2 - Single - Default",
+      "context": {
+        "actionbar": {
+          "type": "single",
+          "modifiers": "tier-2",
+          "link": {
+            "name": "Export &amp; Download",
+            "url": "#"
+          },
+          "status": {
+            "text": "Status"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tier 2 - Employee - Default",
+      "context": {
+        "actionbar": {
+          "type": "employee",
+          "modifiers": "tier-2",
+          "employee": {
+            "name": "First Last",
+            "id": "XXXXXX",
+            "avatar": {
+              "image": {
+                "src": "/images/avatar-placeholder.svg",
+                "alt": "Avatar"
+              }
+            }
+          },
+          "buttons": [
+            {
+              "text": "Monitor Employee",
+              "icon": "icon-eye",
+              "icon_left": true,
+              "url": "#",
+              "modifier": "secondary"
+            },
+            {
+              "text": "Add to Case",
+              "icon": "icon-actions-add",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

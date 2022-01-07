@@ -1,0 +1,139 @@
+.c-action-bar {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  box-shadow: $box-shadow--actionbar;
+  padding: $space $space-quadruple;
+  background: $c-white;
+
+  &--tier-2 {
+    padding: $space $space-double;
+  }
+
+  &__selection {
+    span {
+      padding: $space-quarter;
+      border-radius: 3px;
+
+      &[class*="value"] {
+        padding: $space-quarter $space-half;
+        background-color: $c-gray--dark;
+        color: $c-white;
+      }
+    }
+  }
+
+  &__employee {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    .o-avatar {
+      height: 40px;
+      width: 40px;
+      min-width: 40px;
+      margin-right: $space-half;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-flow: column nowrap;
+
+      span + span {
+        margin-top: $space-quarter;
+      }
+    }
+
+    &-name {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &-id {
+      font-size: 12px;
+      color: $c-gray--45;
+    }
+  }
+
+  &__status {
+    text-transform: uppercase;
+    letter-spacing: .33px;
+    color: $c-gray--45;
+    font-size: 10px;
+    margin: 0 $space-half 0 $space;
+  }
+
+  &__action-items {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-left: auto;
+
+    .o-button {
+      margin-left: $space-and-half;
+    }
+  }
+
+  .o-button {
+    border: 0;
+    box-shadow: $box-shadow--action;
+  }
+
+  &__button--icon-only {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    box-shadow: none !important;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: $c-white;
+    position: relative;
+    color: $c-gray--dark;
+    font-size: 7px;
+    line-height: 1;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 !important;
+      padding-bottom: 4px;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      // visually center the add case icon
+      transform: translateX(10%);
+
+      path {
+        fill: $c-gray--dark;
+      }
+    }
+
+    &:hover {
+      background-color: $c-gray--15;
+      color: $c-gray--dark;
+    }
+
+    &--add {
+      svg {
+        width: 15px;
+        height: 15px;
+        min-width: 15px;
+      }
+    }
+  }
+}

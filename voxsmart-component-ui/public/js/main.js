@@ -54,6 +54,21 @@ if (document.querySelector('.js-select-focus')) {
 }
 
 /**
+* Tabs
+*/
+if (document.querySelector('.js-tab')) {
+  document.querySelectorAll('.js-tab').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.js-tab').forEach(function(el) {
+        el.classList.remove('is-active');
+      });
+      el.classList.add('is-active');
+    });
+  });
+}
+
+/**
 * Form - Select2 Change Value
 */
 var Select2Update = function() {
@@ -118,19 +133,28 @@ if (document.querySelector('.js-select2')) {
 }
 
 /**
-* Tabs
+* Get Closest - helper function
 */
-if (document.querySelector('.js-tab')) {
-  document.querySelectorAll('.js-tab').forEach(el => {
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelectorAll('.js-tab').forEach(function(el) {
-        el.classList.remove('is-active');
-      });
-      el.classList.add('is-active');
-    });
-  });
-}
+var getClosest = function (elem, selector) {
+  if (!Element.prototype.matches) {
+    Element.prototype.matches =
+    Element.prototype.matchesSelector ||
+    Element.prototype.mozMatchesSelector ||
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.oMatchesSelector ||
+    Element.prototype.webkitMatchesSelector ||
+    function(s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+        i = matches.length;
+      while (--i >= 0 && matches.item(i) !== this) {}
+      return i > -1;
+    };
+  }
+  for ( ; elem && elem !== document; elem = elem.parentNode ) {
+    if ( elem.matches( selector ) ) return elem;
+  }
+  return null;
+};
 
 /**
  * toggleClasses()
@@ -207,27 +231,3 @@ function setUtilities(parentEl) {
 }
 
 setUtilities(document);
-
-/**
-* Get Closest - helper function
-*/
-var getClosest = function (elem, selector) {
-  if (!Element.prototype.matches) {
-    Element.prototype.matches =
-    Element.prototype.matchesSelector ||
-    Element.prototype.mozMatchesSelector ||
-    Element.prototype.msMatchesSelector ||
-    Element.prototype.oMatchesSelector ||
-    Element.prototype.webkitMatchesSelector ||
-    function(s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-        i = matches.length;
-      while (--i >= 0 && matches.item(i) !== this) {}
-      return i > -1;
-    };
-  }
-  for ( ; elem && elem !== document; elem = elem.parentNode ) {
-    if ( elem.matches( selector ) ) return elem;
-  }
-  return null;
-};
